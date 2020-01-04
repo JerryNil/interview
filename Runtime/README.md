@@ -213,11 +213,11 @@ _objc_msgForward 消息转发流程，整体流程同上。
 + 根对象是NSObject，它的superclass指针指向nil。
 + 根元对象的superclass指向NSObject，isa指针指向自己。
 
-#### 讲一下对象，类对象，元类，跟元类结构体的组成以及他们是如何相关联的？为什么对象方法没有保存的对象结构体里，而是保存在类对象的结构体里？（考底层对象结构图）
+#### 讲一下对象，类对象，元类，跟元类结构体的组成以及他们是如何相关联的？为什么对象方法没有保存的对象结构体里，而是保存在类对象的结构体里？
 
 实例对象的 isa 指向类对象，类对象的 isa 指向元类，元类的 isa 指向根元类， 根元类的 isa 指向 自己。
 
-#### iOS 中内省的几个方法？class方法和objc_getClass方法有什么区别?（runtime底层基础）
+#### iOS 中内省的几个方法？class方法和objc_getClass方法有什么区别?
 
 [](https://www.jianshu.com/u/3171707d8892)
 
@@ -244,9 +244,10 @@ Class objc_getClass(const char *aClassName)
 }
 ```
 
-1、`object_getClass` 获取的是对象的isa指针所指向的对象
-2、`objc_getClass` 根据类名名称获取 Class
++ `object_getClass` 获取的是对象的isa指针所指向的对象
 
-#### 在运行时创建类的方法objc_allocateClassPair的方法名尾部为什么是pair（成对的意思）？（runtime底层基础）
++ objc_getClass` 根据类名名称获取 Class
+
+#### 在运行时创建类的方法objc_allocateClassPair的方法名尾部为什么是pair（成对的意思）？
 
 这个方法的作用是动态创建类，因为类里面含有实例方法和类方法，实例方法是存放在类对象中，类方法是存放在元类中，所以其实创建新类是同时创建类和它的metaclass。所以尾部方法是pair成对的意思

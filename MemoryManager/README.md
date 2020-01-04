@@ -4,24 +4,25 @@ iOS 使用引用计数来进行内存管理。当调用 reatin 的时候引用�
 
 ARC，自动引用计数是编译器特性，会在编译时在适当的位置添加retain、release操作。
 
-**内存管理原则**
+#### 内存管理原则
 
 谁持有谁释放。
 
-所有权修饰符包括，__strong/__weak/__unsafe_unretain/_autorelease
-__strong：强引用，持有对象。
-__weak：弱引用，不持有对象，对象销毁，指向该对象的属性置为nil。
-__unsafe_unretain：不安全修饰符，不持有对象，对象销毁，指向对象的属性不会置为nil，容易出现悬垂指针，发生奔溃，但是效率比weak高。
+所有权修饰符包括，`__strong` / `__weak`  / `__unsafe_unretain`/`_autorelease`
+
++ `__strong`：强引用，持有对象。__
++ `__weak`：弱引用，不持有对象，对象销毁，指向该对象的属性置为nil。_
++ `__unsafe_unretain`：不安全修饰符，不持有对象，对象销毁，指向对象的属性不会置为nil，容易出现悬垂指针，发生奔溃，但是效率比weak高。
 
 不是以alloc、new、copy、mutableCopy创建的对象，会自动将返回值的对象注册到autorelease。
 
-**访问 __weak 修饰的变量，是否已经被注册在了 @autoreleasePool 中？为什么？**
+#### 访问 __weak 修饰的变量，是否已经被注册在了 @autoreleasePool 中？为什么？
 
 访问weak修饰符的变量必须访问注册到autorelease中，因为weak持有对象的弱引用，而在访问对象的过程中，该对象可能被废弃，如果注册到autorelease中，那么在autorelease释放之前都能保证对象的存在。
 
 id指针或对象的指针在没有显示指定时会被附加上_autorelease修饰符。
 
-**ARC 内存管理规则**
+#### ARC 内存管理规则
 
 + 不能使用retain、release、retainCount
 + 不能使用NSDeallocateObject
@@ -95,26 +96,3 @@ page里面的对象满了，next指针指向栈顶的时候，会新创建一个
 
 push的时候，创建了一个新的autoreleasepool，然后会传入一个边界对象，push到自动释池的栈顶，并且返回这个边界对象。push的内部其实会调用autoreleaseFast函数，它在执行一个具体操作时，会分为三种情况进行处理。
 pop的时候，入参其实就是push当时返回的边界对象，根据边界对象地址找到所在page，然后通过objc_release释放边界对象之前的对象。
-
-#### 内存出现泄漏的点？
-
-内存泄漏主要有三种形式：
-1、Leaked memory：未引用的内存不能使用或释放。
-2、Abandoned memory：废弃掉的内存，但是App任然引用。
-3、Cached memory：App任然使用的内存，可以再次获取已获得更好的性能。
-
-1、NSTimer
-2、ViewController，delegate
-3、Block
-4、对象之间的互相引用
-5、NSURLSession，delegate 是 strong 类型。
-6、如果使用到 CF 内部 create 和 copy 的方法时，注意需要及时释放
-
-#### 如何检测泄漏？
-
-1、静态检测，Analyze。
-2、Instrument，Leaks，Allocations
-3、第三方工具 MLeaksFinder
-
-+ https://www.jianshu.com/p/e9d989c12ff8
-+ https://wereadteam.github.io/2016/02/22/MLeaksFinder/

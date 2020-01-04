@@ -113,6 +113,51 @@
             
 
             
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../MemoryManager/weak.html">
+            
+                <a href="../MemoryManager/weak.html">
+            
+                    
+                    weak 实现原理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../MemoryManager/autoreleasepool.html">
+            
+                <a href="../MemoryManager/autoreleasepool.html">
+            
+                    
+                    Autoreleasepool 实现原理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../MemoryManager/memoryleak.html">
+            
+                <a href="../MemoryManager/memoryleak.html">
+            
+                    
+                    内存泄漏
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
         </li>
     
         <li class="chapter " data-level="1.3" data-path="../Basic/">
@@ -439,9 +484,9 @@ const ivar_list_t * ivars;
 <li>&#x6839;&#x5BF9;&#x8C61;&#x662F;NSObject&#xFF0C;&#x5B83;&#x7684;superclass&#x6307;&#x9488;&#x6307;&#x5411;nil&#x3002;</li>
 <li>&#x6839;&#x5143;&#x5BF9;&#x8C61;&#x7684;superclass&#x6307;&#x5411;NSObject&#xFF0C;isa&#x6307;&#x9488;&#x6307;&#x5411;&#x81EA;&#x5DF1;&#x3002;</li>
 </ul>
-<h4 id="&#x8BB2;&#x4E00;&#x4E0B;&#x5BF9;&#x8C61;&#xFF0C;&#x7C7B;&#x5BF9;&#x8C61;&#xFF0C;&#x5143;&#x7C7B;&#xFF0C;&#x8DDF;&#x5143;&#x7C7B;&#x7ED3;&#x6784;&#x4F53;&#x7684;&#x7EC4;&#x6210;&#x4EE5;&#x53CA;&#x4ED6;&#x4EEC;&#x662F;&#x5982;&#x4F55;&#x76F8;&#x5173;&#x8054;&#x7684;&#xFF1F;&#x4E3A;&#x4EC0;&#x4E48;&#x5BF9;&#x8C61;&#x65B9;&#x6CD5;&#x6CA1;&#x6709;&#x4FDD;&#x5B58;&#x7684;&#x5BF9;&#x8C61;&#x7ED3;&#x6784;&#x4F53;&#x91CC;&#xFF0C;&#x800C;&#x662F;&#x4FDD;&#x5B58;&#x5728;&#x7C7B;&#x5BF9;&#x8C61;&#x7684;&#x7ED3;&#x6784;&#x4F53;&#x91CC;&#xFF1F;&#xFF08;&#x8003;&#x5E95;&#x5C42;&#x5BF9;&#x8C61;&#x7ED3;&#x6784;&#x56FE;&#xFF09;">&#x8BB2;&#x4E00;&#x4E0B;&#x5BF9;&#x8C61;&#xFF0C;&#x7C7B;&#x5BF9;&#x8C61;&#xFF0C;&#x5143;&#x7C7B;&#xFF0C;&#x8DDF;&#x5143;&#x7C7B;&#x7ED3;&#x6784;&#x4F53;&#x7684;&#x7EC4;&#x6210;&#x4EE5;&#x53CA;&#x4ED6;&#x4EEC;&#x662F;&#x5982;&#x4F55;&#x76F8;&#x5173;&#x8054;&#x7684;&#xFF1F;&#x4E3A;&#x4EC0;&#x4E48;&#x5BF9;&#x8C61;&#x65B9;&#x6CD5;&#x6CA1;&#x6709;&#x4FDD;&#x5B58;&#x7684;&#x5BF9;&#x8C61;&#x7ED3;&#x6784;&#x4F53;&#x91CC;&#xFF0C;&#x800C;&#x662F;&#x4FDD;&#x5B58;&#x5728;&#x7C7B;&#x5BF9;&#x8C61;&#x7684;&#x7ED3;&#x6784;&#x4F53;&#x91CC;&#xFF1F;&#xFF08;&#x8003;&#x5E95;&#x5C42;&#x5BF9;&#x8C61;&#x7ED3;&#x6784;&#x56FE;&#xFF09;</h4>
+<h4 id="&#x8BB2;&#x4E00;&#x4E0B;&#x5BF9;&#x8C61;&#xFF0C;&#x7C7B;&#x5BF9;&#x8C61;&#xFF0C;&#x5143;&#x7C7B;&#xFF0C;&#x8DDF;&#x5143;&#x7C7B;&#x7ED3;&#x6784;&#x4F53;&#x7684;&#x7EC4;&#x6210;&#x4EE5;&#x53CA;&#x4ED6;&#x4EEC;&#x662F;&#x5982;&#x4F55;&#x76F8;&#x5173;&#x8054;&#x7684;&#xFF1F;&#x4E3A;&#x4EC0;&#x4E48;&#x5BF9;&#x8C61;&#x65B9;&#x6CD5;&#x6CA1;&#x6709;&#x4FDD;&#x5B58;&#x7684;&#x5BF9;&#x8C61;&#x7ED3;&#x6784;&#x4F53;&#x91CC;&#xFF0C;&#x800C;&#x662F;&#x4FDD;&#x5B58;&#x5728;&#x7C7B;&#x5BF9;&#x8C61;&#x7684;&#x7ED3;&#x6784;&#x4F53;&#x91CC;&#xFF1F;">&#x8BB2;&#x4E00;&#x4E0B;&#x5BF9;&#x8C61;&#xFF0C;&#x7C7B;&#x5BF9;&#x8C61;&#xFF0C;&#x5143;&#x7C7B;&#xFF0C;&#x8DDF;&#x5143;&#x7C7B;&#x7ED3;&#x6784;&#x4F53;&#x7684;&#x7EC4;&#x6210;&#x4EE5;&#x53CA;&#x4ED6;&#x4EEC;&#x662F;&#x5982;&#x4F55;&#x76F8;&#x5173;&#x8054;&#x7684;&#xFF1F;&#x4E3A;&#x4EC0;&#x4E48;&#x5BF9;&#x8C61;&#x65B9;&#x6CD5;&#x6CA1;&#x6709;&#x4FDD;&#x5B58;&#x7684;&#x5BF9;&#x8C61;&#x7ED3;&#x6784;&#x4F53;&#x91CC;&#xFF0C;&#x800C;&#x662F;&#x4FDD;&#x5B58;&#x5728;&#x7C7B;&#x5BF9;&#x8C61;&#x7684;&#x7ED3;&#x6784;&#x4F53;&#x91CC;&#xFF1F;</h4>
 <p>&#x5B9E;&#x4F8B;&#x5BF9;&#x8C61;&#x7684; isa &#x6307;&#x5411;&#x7C7B;&#x5BF9;&#x8C61;&#xFF0C;&#x7C7B;&#x5BF9;&#x8C61;&#x7684; isa &#x6307;&#x5411;&#x5143;&#x7C7B;&#xFF0C;&#x5143;&#x7C7B;&#x7684; isa &#x6307;&#x5411;&#x6839;&#x5143;&#x7C7B;&#xFF0C; &#x6839;&#x5143;&#x7C7B;&#x7684; isa &#x6307;&#x5411; &#x81EA;&#x5DF1;&#x3002;</p>
-<h4 id="ios-&#x4E2D;&#x5185;&#x7701;&#x7684;&#x51E0;&#x4E2A;&#x65B9;&#x6CD5;&#xFF1F;class&#x65B9;&#x6CD5;&#x548C;objcgetclass&#x65B9;&#x6CD5;&#x6709;&#x4EC0;&#x4E48;&#x533A;&#x522B;&#xFF08;runtime&#x5E95;&#x5C42;&#x57FA;&#x7840;&#xFF09;">iOS &#x4E2D;&#x5185;&#x7701;&#x7684;&#x51E0;&#x4E2A;&#x65B9;&#x6CD5;&#xFF1F;class&#x65B9;&#x6CD5;&#x548C;objc_getClass&#x65B9;&#x6CD5;&#x6709;&#x4EC0;&#x4E48;&#x533A;&#x522B;?&#xFF08;runtime&#x5E95;&#x5C42;&#x57FA;&#x7840;&#xFF09;</h4>
+<h4 id="ios-&#x4E2D;&#x5185;&#x7701;&#x7684;&#x51E0;&#x4E2A;&#x65B9;&#x6CD5;&#xFF1F;class&#x65B9;&#x6CD5;&#x548C;objcgetclass&#x65B9;&#x6CD5;&#x6709;&#x4EC0;&#x4E48;&#x533A;&#x522B;">iOS &#x4E2D;&#x5185;&#x7701;&#x7684;&#x51E0;&#x4E2A;&#x65B9;&#x6CD5;&#xFF1F;class&#x65B9;&#x6CD5;&#x548C;objc_getClass&#x65B9;&#x6CD5;&#x6709;&#x4EC0;&#x4E48;&#x533A;&#x522B;?</h4>
 <p><a href="https://www.jianshu.com/u/3171707d8892" target="_blank"></a></p>
 <pre><code>- (Class)class {
     return object_getClass(self);
@@ -460,9 +505,13 @@ Class object_getClass(id obj)
     // NO unconnected, YES class handler
     return look_up_class(aClassName, NO, YES);
 }
-</code></pre><p>1&#x3001;<code>object_getClass</code> &#x83B7;&#x53D6;&#x7684;&#x662F;&#x5BF9;&#x8C61;&#x7684;isa&#x6307;&#x9488;&#x6240;&#x6307;&#x5411;&#x7684;&#x5BF9;&#x8C61;
-2&#x3001;<code>objc_getClass</code> &#x6839;&#x636E;&#x7C7B;&#x540D;&#x540D;&#x79F0;&#x83B7;&#x53D6; Class</p>
-<h4 id="&#x5728;&#x8FD0;&#x884C;&#x65F6;&#x521B;&#x5EFA;&#x7C7B;&#x7684;&#x65B9;&#x6CD5;objcallocateclasspair&#x7684;&#x65B9;&#x6CD5;&#x540D;&#x5C3E;&#x90E8;&#x4E3A;&#x4EC0;&#x4E48;&#x662F;pair&#xFF08;&#x6210;&#x5BF9;&#x7684;&#x610F;&#x601D;&#xFF09;&#xFF1F;&#xFF08;runtime&#x5E95;&#x5C42;&#x57FA;&#x7840;&#xFF09;">&#x5728;&#x8FD0;&#x884C;&#x65F6;&#x521B;&#x5EFA;&#x7C7B;&#x7684;&#x65B9;&#x6CD5;objc_allocateClassPair&#x7684;&#x65B9;&#x6CD5;&#x540D;&#x5C3E;&#x90E8;&#x4E3A;&#x4EC0;&#x4E48;&#x662F;pair&#xFF08;&#x6210;&#x5BF9;&#x7684;&#x610F;&#x601D;&#xFF09;&#xFF1F;&#xFF08;runtime&#x5E95;&#x5C42;&#x57FA;&#x7840;&#xFF09;</h4>
+</code></pre><ul>
+<li><p><code>object_getClass</code> &#x83B7;&#x53D6;&#x7684;&#x662F;&#x5BF9;&#x8C61;&#x7684;isa&#x6307;&#x9488;&#x6240;&#x6307;&#x5411;&#x7684;&#x5BF9;&#x8C61;</p>
+</li>
+<li><p>objc_getClass` &#x6839;&#x636E;&#x7C7B;&#x540D;&#x540D;&#x79F0;&#x83B7;&#x53D6; Class</p>
+</li>
+</ul>
+<h4 id="&#x5728;&#x8FD0;&#x884C;&#x65F6;&#x521B;&#x5EFA;&#x7C7B;&#x7684;&#x65B9;&#x6CD5;objcallocateclasspair&#x7684;&#x65B9;&#x6CD5;&#x540D;&#x5C3E;&#x90E8;&#x4E3A;&#x4EC0;&#x4E48;&#x662F;pair&#xFF08;&#x6210;&#x5BF9;&#x7684;&#x610F;&#x601D;&#xFF09;&#xFF1F;">&#x5728;&#x8FD0;&#x884C;&#x65F6;&#x521B;&#x5EFA;&#x7C7B;&#x7684;&#x65B9;&#x6CD5;objc_allocateClassPair&#x7684;&#x65B9;&#x6CD5;&#x540D;&#x5C3E;&#x90E8;&#x4E3A;&#x4EC0;&#x4E48;&#x662F;pair&#xFF08;&#x6210;&#x5BF9;&#x7684;&#x610F;&#x601D;&#xFF09;&#xFF1F;</h4>
 <p>&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#x7684;&#x4F5C;&#x7528;&#x662F;&#x52A8;&#x6001;&#x521B;&#x5EFA;&#x7C7B;&#xFF0C;&#x56E0;&#x4E3A;&#x7C7B;&#x91CC;&#x9762;&#x542B;&#x6709;&#x5B9E;&#x4F8B;&#x65B9;&#x6CD5;&#x548C;&#x7C7B;&#x65B9;&#x6CD5;&#xFF0C;&#x5B9E;&#x4F8B;&#x65B9;&#x6CD5;&#x662F;&#x5B58;&#x653E;&#x5728;&#x7C7B;&#x5BF9;&#x8C61;&#x4E2D;&#xFF0C;&#x7C7B;&#x65B9;&#x6CD5;&#x662F;&#x5B58;&#x653E;&#x5728;&#x5143;&#x7C7B;&#x4E2D;&#xFF0C;&#x6240;&#x4EE5;&#x5176;&#x5B9E;&#x521B;&#x5EFA;&#x65B0;&#x7C7B;&#x662F;&#x540C;&#x65F6;&#x521B;&#x5EFA;&#x7C7B;&#x548C;&#x5B83;&#x7684;metaclass&#x3002;&#x6240;&#x4EE5;&#x5C3E;&#x90E8;&#x65B9;&#x6CD5;&#x662F;pair&#x6210;&#x5BF9;&#x7684;&#x610F;&#x601D;</p>
 
                                 
@@ -507,7 +556,7 @@ Class object_getClass(id obj)
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Runtime","level":"1.4","depth":1,"next":{"title":"分类","level":"1.4.1","depth":2,"path":"Runtime/category/README.md","ref":"Runtime/category/README.md","articles":[]},"previous":{"title":"基础支持","level":"1.3","depth":1,"path":"Basic/README.md","ref":"Basic/README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Runtime/README.md","mtime":"2020-01-04T12:03:31.717Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-01-04T11:57:35.748Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Runtime","level":"1.4","depth":1,"next":{"title":"分类","level":"1.4.1","depth":2,"path":"Runtime/category/README.md","ref":"Runtime/category/README.md","articles":[]},"previous":{"title":"基础支持","level":"1.3","depth":1,"path":"Basic/README.md","ref":"Basic/README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Runtime/README.md","mtime":"2020-01-04T12:05:32.166Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-01-04T12:31:02.702Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
