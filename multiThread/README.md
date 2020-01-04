@@ -1,3 +1,5 @@
+## 多线程
+
 #### 线程的生命周期
 
 四个状态：
@@ -28,7 +30,7 @@
 + NSOperation && NSOperationQueue
 + GCD
 
-三者的区别
+#### NSThread、NSOPerationQueue、GCD 区别
 
 + NSThread 需要维护自己的生命周期，是基于pthread 封装的OC类，线程之间的并发需要自己控制。
 + NSOperation 它是基于GCD封装的抽象类，实际使用中需要使用它的子类，它不需要管理线程的生命周期和线程的同步和互斥。还可以设置任务之间的依赖关系等等。
@@ -43,27 +45,37 @@ NSOperation vs GCD
 + Operation可以监视操作或操作队列的状态。准备、执行或完成。
 + Operation可以指定可以同时运行的队列操作的最大数目，可以控制最大并发数。
 
+#### GCD
+
 GCD的几个重要概念
 
+```
 1、队列 queue。分为串行队列和并行队列。
 2、任务 sources，可以把source创建到系统上。
 3、分组 group，可以把一系列任务加到分组中，等待组中的所有任务完成才结束。
 4、信号量 semaphores，控制更加复杂的并发。
+```
 
 Queue，执行顺序 FIFO
 
+```
 1、串行队列。队列中的任务一个接一个的执行，顺序执行。
 2、并行队列。可以并发的执行多个任务。
 3、主队列，是一个全局的串行队列，任务会在主线程中执行，主队列通过与runloop交互，把任务添加到runloop中执行。
+```
 
 Global Queue 队列优先级
 
+```
 High、Default、Low、Background
+```
 
 执行任务
 
+```
 1、async。异步执行，不用等待之前的任务是否已完成，可以立即开始新的一个任务。
 2、sync。同步执行，任务执行完一个再执行下一个。
+```
 
 线程安全
 
@@ -72,10 +84,12 @@ High、Default、Low、Background
 
 经典问题
 
+```
 1、在主队列中同步执行。死锁。
 2、在全局并行队列中同步执行，不会死锁。
 3、在自定义的串行队列中同步执行，死锁。
 4、在全局并发队列中异步执行，然后在主线程中同步执行，正常。
+```
 
 #### 什么时候会出现死锁？如何避免？
 
@@ -97,6 +111,7 @@ High、Default、Low、Background
 
 #### 有哪几种锁？各自的原理？它们之间的区别是什么？最好可以结合使用场景来说
 
+```
 1、OSSpinLock（自旋锁）。
 2、NSLock（对象锁）。
 3、pthread_mutex（互斥锁）。
@@ -105,16 +120,19 @@ High、Default、Low、Background
 6、NSRecursiveLock（递归锁）。
 7、串行队列
 8、dispatch_semaphore（信号量）
+```
 
 自旋锁和互斥锁的区别
 自旋锁，等待锁的线程会处于一直忙等状态，一直占用CPU资源
 互斥锁，等待锁的线程会处于休眠状态，减少CPU的开销。
 
+```
 1、os_unfair_lock，OSSpinLock 的代替品，本质是一个互斥锁。
 2、pthread_mutex_t：互斥锁。
 3、NSLock：是对 pthread_mutex_t 的简单封装。
 4、NSRecursiveLock：递归锁，是对 pthread_mutex_t 递归锁的封装。同一个线程可以多次加锁，不会造成死锁。
 5、synchronized：不需要显示的创建锁对象，隐式的添加一个异常处理逻辑来保护代码，会在异常发生的时候自动释放互斥锁。
+```
 
 + https://www.zybuluo.com/qidiandasheng/note/493337
 + https://blog.ibireme.com/2016/01/16/spinlock_is_unsafe_in_ios/
