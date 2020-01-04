@@ -6,15 +6,16 @@ ARC，自动引用计数是编译器特性，会在编译时在适当的位置�
 
 #### 内存管理原则
 
-谁持有谁释放。
+**总则：谁持有谁释放。**
 
-所有权修饰符包括，`__strong` / `__weak`  / `__unsafe_unretain`/`_autorelease`
+所有权修饰符包括如下：
 
 + `__strong`：强引用，持有对象。__
 + `__weak`：弱引用，不持有对象，对象销毁，指向该对象的属性置为nil。_
 + `__unsafe_unretain`：不安全修饰符，不持有对象，对象销毁，指向对象的属性不会置为nil，容易出现悬垂指针，发生奔溃，但是效率比weak高。
++ `_autorelease` 添加到autoreleasepool 的对象都会进行延迟释放。
 
-不是以alloc、new、copy、mutableCopy创建的对象，会自动将返回值的对象注册到autorelease。
+不是以alloc、new、copy、mutableCopy创建的对象，会自动将返回值的对象注册到 autoreleasepool。
 
 #### 访问 __weak 修饰的变量，是否已经被注册在了 @autoreleasePool 中？为什么？
 
@@ -58,41 +59,3 @@ id指针或对象的指针在没有显示指定时会被附加上_autorelease修
 2、底层使用 AssociatedManager 管理关联对象，内部其实有一个哈希表来 AssociationMap 存储所有关联对象的。相当于把所有关联对象存在一个哈希map中，map的key是这个对象的指针地址，而map的value是另一个哈希map（objectAssociationmap），里面保存关联对象的KV对。objectAssociationmap 内部是 value 和 policy，根据指定的 policy 进行内存管理。
 
 3、释放的时候不需要手动设置指针为nil，因为 runtime 在对象销毁函数destructInstance中会判断这个对象有没有关联对象，如果有会自动做关联对象的清除。
-
-#### Autoreleasepool所使用的数据结构是什么？AutoreleasePoolPage结构体了解么？（内存管理，考底层autoreleasepool）
-
-https://cloud.tencent.com/developer/article/1350726
-https://blog.leichunfeng.com/blog/2015/05/31/objective-c-autorelease-pool-implementation-principle/
-
-1、以 AutoReleasePoolPage 为节点的双向链表。
-2、源码结构
-
-```
-class AutoreleasePoolPage 
-{
-#   define POOL_BOUNDARY nil // 池边界对象
-    static pthread_key_t const key = AUTORELEASE_POOL_KEY;
-    static uint8_t const SCRIBBLE = 0xA3;  // 0xA3A3A3A3 after releasing
-    static size_t const SIZE = 
-#if PROTECT_AUTORELEASEPOOL
-        PAGE_MAX_SIZE;  // must be multiple of vm page size
-#else
-        PAGE_MAX_SIZE;  // size and alignment, power of 2
-#endif
-    static size_t const COUNT = SIZE / sizeof(id);
-
-    magic_t const magic; // 验证结构是否完整
-    id *next; // next指针
-    pthread_t const thread; // 当前线程
-    AutoreleasePoolPage * const parent; // 父节点指针
-    AutoreleasePoolPage *child; // 子节点指针
-    uint32_t const depth;
-    uint32_t hiwat;
-```
-
-page里面的对象满了，next指针指向栈顶的时候，会新创建一个page对象链接链表，后来操作的autorelease对象会加入到新的page中，next指针指向新的page的内存地址，向一个对象发送release消息，
-
-3、自动释放池的实现步骤，主要是push、autorelease、pop三步。
-
-push的时候，创建了一个新的autoreleasepool，然后会传入一个边界对象，push到自动释池的栈顶，并且返回这个边界对象。push的内部其实会调用autoreleaseFast函数，它在执行一个具体操作时，会分为三种情况进行处理。
-pop的时候，入参其实就是push当时返回的边界对象，根据边界对象地址找到所在page，然后通过objc_release释放边界对象之前的对象。

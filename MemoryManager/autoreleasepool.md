@@ -234,3 +234,8 @@ void kill()
 #### autorelease对象在何时释放
 
 + 在没有手动加入 autoreleasepool 的情况下，autorelease 对像是在当前runloop迭代结束后释放的，而它能够释放的原因是系统在每个runloop迭代中加入自动释放池的push和pop操作。
+
+#### 参考
+
++ https://cloud.tencent.com/developer/article/1350726
++ https://blog.leichunfeng.com/blog/2015/05/31/objective-c-autorelease-pool-implementation-principle/
