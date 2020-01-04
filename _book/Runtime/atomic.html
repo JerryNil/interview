@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>数据结构 · GitBook</title>
+        <title>atomic · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,10 +57,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="../system/" />
+    <link rel="next" href="associate.html" />
     
     
-    <link rel="prev" href="../multiThread/" />
+    <link rel="prev" href="kvo.html" />
     
 
     </head>
@@ -173,9 +173,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4" data-path="../Runtime/">
+        <li class="chapter " data-level="1.4" data-path="./">
             
-                <a href="../Runtime/">
+                <a href="./">
             
                     
                     Runtime
@@ -187,9 +187,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.4.1" data-path="../Runtime/category.html">
+        <li class="chapter " data-level="1.4.1" data-path="category.html">
             
-                <a href="../Runtime/category.html">
+                <a href="category.html">
             
                     
                     分类
@@ -200,9 +200,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.2" data-path="../Runtime/kvo.html">
+        <li class="chapter " data-level="1.4.2" data-path="kvo.html">
             
-                <a href="../Runtime/kvo.html">
+                <a href="kvo.html">
             
                     
                     KVO && KVC
@@ -213,9 +213,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.3" data-path="../Runtime/atomic.html">
+        <li class="chapter active" data-level="1.4.3" data-path="atomic.html">
             
-                <a href="../Runtime/atomic.html">
+                <a href="atomic.html">
             
                     
                     atomic
@@ -226,9 +226,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.4" data-path="../Runtime/associate.html">
+        <li class="chapter " data-level="1.4.4" data-path="associate.html">
             
-                <a href="../Runtime/associate.html">
+                <a href="associate.html">
             
                     
                     关联对象
@@ -315,9 +315,9 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.9" data-path="./">
+        <li class="chapter " data-level="1.9" data-path="../datastruct/">
             
-                <a href="./">
+                <a href="../datastruct/">
             
                     
                     数据结构
@@ -397,7 +397,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >数据结构</a>
+        <a href=".." >atomic</a>
     </h1>
 </div>
 
@@ -412,24 +412,38 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h2 id="&#x6570;&#x636E;&#x7ED3;&#x6784;">&#x6570;&#x636E;&#x7ED3;&#x6784;</h2>
-<h4 id="&#x94FE;&#x8868;&#x548C;&#x6570;&#x7EC4;&#x7684;&#x533A;&#x522B;&#x662F;&#x4EC0;&#x4E48;&#xFF1F;&#x63D2;&#x5165;&#x548C;&#x67E5;&#x8BE2;&#x7684;&#x65F6;&#x95F4;&#x590D;&#x6742;&#x5EA6;&#x5206;&#x522B;&#x662F;&#x591A;&#x5C11;&#xFF1F;">&#x94FE;&#x8868;&#x548C;&#x6570;&#x7EC4;&#x7684;&#x533A;&#x522B;&#x662F;&#x4EC0;&#x4E48;&#xFF1F;&#x63D2;&#x5165;&#x548C;&#x67E5;&#x8BE2;&#x7684;&#x65F6;&#x95F4;&#x590D;&#x6742;&#x5EA6;&#x5206;&#x522B;&#x662F;&#x591A;&#x5C11;&#xFF1F;</h4>
-<ul>
-<li>&#x6570;&#x7EC4;&#x662F;&#x4E00;&#x5757;&#x8FDE;&#x7EED;&#x7684;&#x5185;&#x5B58;&#x3002;&#x968F;&#x673A;&#x8BBF;&#x95EE;&#x6027;&#x5F3A;&#xFF0C;&#x67E5;&#x627E;&#x901F;&#x5EA6;&#x5FEB;&#x3002;&#x63D2;&#x5165;&#x548C;&#x5220;&#x9664;&#x6548;&#x7387;&#x4F4E;&#xFF0C;&#x53EF;&#x80FD;&#x6D6A;&#x8D39;&#x5185;&#x5B58;&#xFF0C;&#x5185;&#x5B58;&#x7A7A;&#x95F4;&#x8981;&#x6C42;&#x9AD8;&#xFF0C;&#x5FC5;&#x987B;&#x6709;&#x8DB3;&#x591F;&#x7684;&#x8FDE;&#x7EED;&#x5185;&#x5B58;&#x7A7A;&#x95F4;&#x3002;&#x63D2;&#x5165;&#x548C;&#x5220;&#x9664;&#x662F;On&#xFF0C;&#x67E5;&#x8BE2;&#x662F;O1</li>
-<li>&#x94FE;&#x8868;&#x63D2;&#x5165;&#x5220;&#x9664;&#x901F;&#x5EA6;&#x5FEB;&#xFF0C;&#x5185;&#x5B58;&#x5229;&#x7528;&#x7387;&#x9AD8;&#xFF0C;&#x4E0D;&#x6D6A;&#x8D39;&#x5185;&#x5B58;&#xFF0C;&#x5927;&#x5C0F;&#x6CA1;&#x6709;&#x56FA;&#x5B9A;&#xFF0C;&#x5BB9;&#x6613;&#x6269;&#x5C55;&#x3002;&#x63D2;&#x5165;&#x548C;&#x5220;&#x9664;&#x662F;O1&#xFF0C;&#x67E5;&#x8BE2;&#x662F;On</li>
-</ul>
-<h4 id="&#x54C8;&#x5E0C;&#x8868;&#x662F;&#x5982;&#x4F55;&#x5B9E;&#x73B0;&#x7684;&#xFF1F;&#x5982;&#x4F55;&#x89E3;&#x51B3;&#x5730;&#x5740;&#x51B2;&#x7A81;&#xFF1F;">&#x54C8;&#x5E0C;&#x8868;&#x662F;&#x5982;&#x4F55;&#x5B9E;&#x73B0;&#x7684;&#xFF1F;&#x5982;&#x4F55;&#x89E3;&#x51B3;&#x5730;&#x5740;&#x51B2;&#x7A81;&#xFF1F;</h4>
-<p>&#x3002;&#x3002;&#x3002;</p>
-<h4 id="&#x6392;&#x5E8F;&#x9898;&#xFF1A;&#x5192;&#x6CE1;&#x6392;&#x5E8F;&#xFF0C;&#x9009;&#x62E9;&#x6392;&#x5E8F;&#xFF0C;&#x63D2;&#x5165;&#x6392;&#x5E8F;&#xFF0C;&#x5FEB;&#x901F;&#x6392;&#x5E8F;&#xFF08;&#x4E8C;&#x8DEF;&#xFF0C;&#x4E09;&#x8DEF;&#xFF09;&#x80FD;&#x5199;&#x51FA;&#x90A3;&#x4E9B;&#xFF1F;">&#x6392;&#x5E8F;&#x9898;&#xFF1A;&#x5192;&#x6CE1;&#x6392;&#x5E8F;&#xFF0C;&#x9009;&#x62E9;&#x6392;&#x5E8F;&#xFF0C;&#x63D2;&#x5165;&#x6392;&#x5E8F;&#xFF0C;&#x5FEB;&#x901F;&#x6392;&#x5E8F;&#xFF08;&#x4E8C;&#x8DEF;&#xFF0C;&#x4E09;&#x8DEF;&#xFF09;&#x80FD;&#x5199;&#x51FA;&#x90A3;&#x4E9B;&#xFF1F;</h4>
-<p><a href="https://www.cnblogs.com/onepixel/p/7674659.html" target="_blank">https://www.cnblogs.com/onepixel/p/7674659.html</a></p>
-<p>&#x3002;&#x3002;&#x3002;</p>
-<h4 id="&#x94FE;&#x8868;&#x9898;&#xFF1A;&#x5982;&#x4F55;&#x68C0;&#x6D4B;&#x94FE;&#x8868;&#x4E2D;&#x662F;&#x5426;&#x6709;&#x73AF;&#xFF1F;&#x5982;&#x4F55;&#x5220;&#x9664;&#x94FE;&#x8868;&#x4E2D;&#x7B49;&#x4E8E;&#x67D0;&#x4E2A;&#x503C;&#x7684;&#x6240;&#x6709;&#x8282;&#x70B9;&#xFF1F;">&#x94FE;&#x8868;&#x9898;&#xFF1A;&#x5982;&#x4F55;&#x68C0;&#x6D4B;&#x94FE;&#x8868;&#x4E2D;&#x662F;&#x5426;&#x6709;&#x73AF;&#xFF1F;&#x5982;&#x4F55;&#x5220;&#x9664;&#x94FE;&#x8868;&#x4E2D;&#x7B49;&#x4E8E;&#x67D0;&#x4E2A;&#x503C;&#x7684;&#x6240;&#x6709;&#x8282;&#x70B9;&#xFF1F;</h4>
-<p>&#x3002;&#x3002;&#x3002;</p>
-<h4 id="&#x6570;&#x7EC4;&#x9898;&#xFF1A;&#x5982;&#x4F55;&#x5728;&#x6709;&#x5E8F;&#x6570;&#x7EC4;&#x4E2D;&#x627E;&#x51FA;&#x548C;&#x7B49;&#x4E8E;&#x7ED9;&#x5B9A;&#x503C;&#x7684;&#x4E24;&#x4E2A;&#x5143;&#x7D20;&#xFF1F;&#x5982;&#x4F55;&#x5408;&#x5E76;&#x4E24;&#x4E2A;&#x6709;&#x5E8F;&#x7684;&#x6570;&#x7EC4;&#x4E4B;&#x540E;&#x4FDD;&#x6301;&#x6709;&#x5E8F;&#xFF1F;">&#x6570;&#x7EC4;&#x9898;&#xFF1A;&#x5982;&#x4F55;&#x5728;&#x6709;&#x5E8F;&#x6570;&#x7EC4;&#x4E2D;&#x627E;&#x51FA;&#x548C;&#x7B49;&#x4E8E;&#x7ED9;&#x5B9A;&#x503C;&#x7684;&#x4E24;&#x4E2A;&#x5143;&#x7D20;&#xFF1F;&#x5982;&#x4F55;&#x5408;&#x5E76;&#x4E24;&#x4E2A;&#x6709;&#x5E8F;&#x7684;&#x6570;&#x7EC4;&#x4E4B;&#x540E;&#x4FDD;&#x6301;&#x6709;&#x5E8F;&#xFF1F;</h4>
-<p>&#x3002;&#x3002;&#x3002;</p>
-<h4 id="&#x4E8C;&#x53C9;&#x6811;&#x9898;&#xFF1A;&#x5982;&#x4F55;&#x53CD;&#x8F6C;&#x4E8C;&#x53C9;&#x6811;&#xFF1F;&#x5982;&#x4F55;&#x9A8C;&#x8BC1;&#x4E24;&#x4E2A;&#x4E8C;&#x53C9;&#x6811;&#x662F;&#x5B8C;&#x5168;&#x76F8;&#x7B49;&#x7684;&#xFF1F;">&#x4E8C;&#x53C9;&#x6811;&#x9898;&#xFF1A;&#x5982;&#x4F55;&#x53CD;&#x8F6C;&#x4E8C;&#x53C9;&#x6811;&#xFF1F;&#x5982;&#x4F55;&#x9A8C;&#x8BC1;&#x4E24;&#x4E2A;&#x4E8C;&#x53C9;&#x6811;&#x662F;&#x5B8C;&#x5168;&#x76F8;&#x7B49;&#x7684;&#xFF1F;</h4>
-<p>&#x3002;&#x3002;&#x3002;</p>
+                                <h2 id="atomic">Atomic</h2>
+<h4 id="&#x8BB2;&#x4E00;&#x4E0B;atomic&#x7684;&#x5B9E;&#x73B0;&#x673A;&#x5236;&#xFF1B;&#x4E3A;&#x4EC0;&#x4E48;&#x4E0D;&#x80FD;&#x4FDD;&#x8BC1;&#x7EDD;&#x5BF9;&#x7684;&#x7EBF;&#x7A0B;&#x5B89;&#x5168;&#xFF08;&#x6700;&#x597D;&#x53EF;&#x4EE5;&#x7ED3;&#x5408;&#x573A;&#x666F;&#x6765;&#x8BF4;&#xFF09;&#xFF1F;&#xFF08;&#x591A;&#x7EBF;&#x7A0B;&#x65B9;&#x9762;&#xFF0C;&#x5E95;&#x5C42;atomic&#x7684;&#x5B9E;&#x73B0;&#xFF09;">&#x8BB2;&#x4E00;&#x4E0B;atomic&#x7684;&#x5B9E;&#x73B0;&#x673A;&#x5236;&#xFF1B;&#x4E3A;&#x4EC0;&#x4E48;&#x4E0D;&#x80FD;&#x4FDD;&#x8BC1;&#x7EDD;&#x5BF9;&#x7684;&#x7EBF;&#x7A0B;&#x5B89;&#x5168;&#xFF08;&#x6700;&#x597D;&#x53EF;&#x4EE5;&#x7ED3;&#x5408;&#x573A;&#x666F;&#x6765;&#x8BF4;&#xFF09;&#xFF1F;&#xFF08;&#x591A;&#x7EBF;&#x7A0B;&#x65B9;&#x9762;&#xFF0C;&#x5E95;&#x5C42;atomic&#x7684;&#x5B9E;&#x73B0;&#xFF09;</h4>
+<p>&#x4F7F;&#x7528;atomic&#x4FEE;&#x9970;&#x7684;&#x5C5E;&#x6027;&#xFF0C;&#x7F16;&#x8BD1;&#x5668;&#x4F1A;&#x9ED8;&#x8BA4;&#x8BBE;&#x7F6E;&#x8BFB;&#x5199;&#x65B9;&#x5F0F;&#x4E3A;&#x539F;&#x5B50;&#x64CD;&#x4F5C;&#xFF0C;&#x5E76;&#x6DFB;&#x52A0;&#x4E92;&#x65A5;&#x9501;&#x8FDB;&#x884C;&#x4FDD;&#x62A4;&#x3002;&#x8FD9;&#x628A;&#x9501;&#x662F;os_fair_lock&#x3002;</p>
+<pre><code>// &#x5C5E;&#x6027;&#x8BBE;&#x7F6E;&#x65B9;&#x6CD5;
+id objc_getProperty(id self, SEL _cmd, ptrdiff_t offset, BOOL atomic) {
+    // Atomic retain release world
+    spinlock_t&amp; slotlock = PropertyLocks[slot];
+    slotlock.lock();
+    id value = objc_retain(*slot);
+    slotlock.unlock();
 
+    // for performance, we (safely) issue the autorelease OUTSIDE of the spinlock.
+    return objc_autoreleaseReturnValue(value);
+}
+</code></pre><p>&#x5E95;&#x5C42;&#x7EF4;&#x62A4;&#x7684;&#x4E00;&#x4E2A;&#x5C5E;&#x6027;&#x9501;&#x6570;&#x7EC4;&#xFF0C;&#x5B83;&#x7684;&#x5185;&#x90E8;&#x90FD;&#x662F;&#x4E92;&#x65A5;&#x9501;&#xFF0C;&#x901A;&#x8FC7;&#x4F20;&#x5165;&#x5BF9;&#x8C61;&#x7684;&#x54C8;&#x5E0C;&#x503C;&#x6765;&#x53BB;&#x6570;&#x7EC4;&#x4E2D;&#x83B7;&#x53D6;&#x76F8;&#x5E94;&#x7684;&#x4E92;&#x65A5;&#x9501;&#x3002;</p>
+<pre><code>// &#x5C5E;&#x6027;&#x83B7;&#x53D6;&#x65B9;&#x6CD5;
+static inline void reallySetProperty(id self, SEL _cmd, id newValue, ptrdiff_t offset, bool atomic, bool copy, bool mutableCopy)
+{
+    if (!atomic) {
+        oldValue = *slot;
+        *slot = newValue;
+    } else {
+        spinlock_t&amp; slotlock = PropertyLocks[slot];
+        slotlock.lock();
+        oldValue = *slot;
+        *slot = newValue;        
+        slotlock.unlock();
+    }
+
+    objc_release(oldValue);
+}
+</code></pre>
                                 
                                 </section>
                             
@@ -456,12 +470,12 @@
 
             
                 
-                <a href="../multiThread/" class="navigation navigation-prev " aria-label="Previous page: 多线程">
+                <a href="kvo.html" class="navigation navigation-prev " aria-label="Previous page: KVO && KVC">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="../system/" class="navigation navigation-next " aria-label="Next page: 系统原理">
+                <a href="associate.html" class="navigation navigation-next " aria-label="Next page: 关联对象">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -472,7 +486,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"数据结构","level":"1.9","depth":1,"next":{"title":"系统原理","level":"1.10","depth":1,"path":"system/README.md","ref":"system/README.md","articles":[]},"previous":{"title":"多线程","level":"1.8","depth":1,"path":"multiThread/README.md","ref":"multiThread/README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"datastruct/README.md","mtime":"2020-01-04T13:09:50.871Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-01-04T14:01:04.557Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"atomic","level":"1.4.3","depth":2,"next":{"title":"关联对象","level":"1.4.4","depth":2,"path":"Runtime/associate.md","ref":"Runtime/associate.md","articles":[]},"previous":{"title":"KVO && KVC","level":"1.4.2","depth":2,"path":"Runtime/kvo.md","ref":"Runtime/kvo.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Runtime/atomic.md","mtime":"2020-01-04T13:53:27.079Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-01-04T14:01:04.557Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

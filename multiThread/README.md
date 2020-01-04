@@ -111,6 +111,9 @@ High、Default、Low、Background
 
 #### 有哪几种锁？各自的原理？它们之间的区别是什么？最好可以结合使用场景来说
 
++ https://www.zybuluo.com/qidiandasheng/note/493337
++ https://blog.ibireme.com/2016/01/16/spinlock_is_unsafe_in_ios/
+
 ```
 1、OSSpinLock（自旋锁）。
 2、NSLock（对象锁）。
@@ -120,22 +123,17 @@ High、Default、Low、Background
 6、NSRecursiveLock（递归锁）。
 7、串行队列
 8、dispatch_semaphore（信号量）
+9、os_unfair_lock
 ```
 
-自旋锁和互斥锁的区别
-自旋锁，等待锁的线程会处于一直忙等状态，一直占用CPU资源
-互斥锁，等待锁的线程会处于休眠状态，减少CPU的开销。
+实际场景：线程A 和 线程B
 
-```
-1、os_unfair_lock，OSSpinLock 的代替品，本质是一个互斥锁。
-2、pthread_mutex_t：互斥锁。
-3、NSLock：是对 pthread_mutex_t 的简单封装。
-4、NSRecursiveLock：递归锁，是对 pthread_mutex_t 递归锁的封装。同一个线程可以多次加锁，不会造成死锁。
-5、synchronized：不需要显示的创建锁对象，隐式的添加一个异常处理逻辑来保护代码，会在异常发生的时候自动释放互斥锁。
-```
-
-+ https://www.zybuluo.com/qidiandasheng/note/493337
-+ https://blog.ibireme.com/2016/01/16/spinlock_is_unsafe_in_ios/
++ OCSpinLock，自旋锁加锁，A持有锁，B就会处于忙等状态，检查锁是否可用，消耗CPU资源。优先级反转问题，A的优先级低正在持有锁，B的优先级高，所以A不敢跟B抢资源，导致A迟迟不能完成任务，也无法释放锁。
++ pthred_mutex_t，互斥锁加锁，A持有锁，B处于休眠状态，A释放锁，B访问，不会占用CPU资源。
++ os_fair_lock 代替 OCSpinLock，跟互斥锁一个性质。
++ NSRecursiveLock，递归锁，A持有锁，然后反复加锁持有锁，不会导致死锁。
++ NSLock，对象锁。
++ NSConditionLock 条件锁，A会在满足条件的前提下才会获得锁。
 
 #### dispatch_barrier_async 的作用
 

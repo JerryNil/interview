@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>数据结构 · GitBook</title>
+        <title>KVO && KVC · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,10 +57,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="../system/" />
+    <link rel="next" href="atomic.html" />
     
     
-    <link rel="prev" href="../multiThread/" />
+    <link rel="prev" href="category.html" />
     
 
     </head>
@@ -173,9 +173,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4" data-path="../Runtime/">
+        <li class="chapter " data-level="1.4" data-path="./">
             
-                <a href="../Runtime/">
+                <a href="./">
             
                     
                     Runtime
@@ -187,9 +187,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.4.1" data-path="../Runtime/category.html">
+        <li class="chapter " data-level="1.4.1" data-path="category.html">
             
-                <a href="../Runtime/category.html">
+                <a href="category.html">
             
                     
                     分类
@@ -200,9 +200,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.2" data-path="../Runtime/kvo.html">
+        <li class="chapter active" data-level="1.4.2" data-path="kvo.html">
             
-                <a href="../Runtime/kvo.html">
+                <a href="kvo.html">
             
                     
                     KVO && KVC
@@ -213,9 +213,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.3" data-path="../Runtime/atomic.html">
+        <li class="chapter " data-level="1.4.3" data-path="atomic.html">
             
-                <a href="../Runtime/atomic.html">
+                <a href="atomic.html">
             
                     
                     atomic
@@ -226,9 +226,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.4" data-path="../Runtime/associate.html">
+        <li class="chapter " data-level="1.4.4" data-path="associate.html">
             
-                <a href="../Runtime/associate.html">
+                <a href="associate.html">
             
                     
                     关联对象
@@ -315,9 +315,9 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.9" data-path="./">
+        <li class="chapter " data-level="1.9" data-path="../datastruct/">
             
-                <a href="./">
+                <a href="../datastruct/">
             
                     
                     数据结构
@@ -397,7 +397,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >数据结构</a>
+        <a href=".." >KVO && KVC</a>
     </h1>
 </div>
 
@@ -412,23 +412,26 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h2 id="&#x6570;&#x636E;&#x7ED3;&#x6784;">&#x6570;&#x636E;&#x7ED3;&#x6784;</h2>
-<h4 id="&#x94FE;&#x8868;&#x548C;&#x6570;&#x7EC4;&#x7684;&#x533A;&#x522B;&#x662F;&#x4EC0;&#x4E48;&#xFF1F;&#x63D2;&#x5165;&#x548C;&#x67E5;&#x8BE2;&#x7684;&#x65F6;&#x95F4;&#x590D;&#x6742;&#x5EA6;&#x5206;&#x522B;&#x662F;&#x591A;&#x5C11;&#xFF1F;">&#x94FE;&#x8868;&#x548C;&#x6570;&#x7EC4;&#x7684;&#x533A;&#x522B;&#x662F;&#x4EC0;&#x4E48;&#xFF1F;&#x63D2;&#x5165;&#x548C;&#x67E5;&#x8BE2;&#x7684;&#x65F6;&#x95F4;&#x590D;&#x6742;&#x5EA6;&#x5206;&#x522B;&#x662F;&#x591A;&#x5C11;&#xFF1F;</h4>
+                                <h2 id="kvo">KVO</h2>
+<h4 id="kvo&#x7684;&#x5E95;&#x5C42;&#x5B9E;&#x73B0;&#xFF1F;&#x5982;&#x4F55;&#x53D6;&#x6D88;&#x7CFB;&#x7EDF;&#x9ED8;&#x8BA4;&#x7684;kvo&#x5E76;&#x624B;&#x52A8;&#x89E6;&#x53D1;&#xFF08;&#x7ED9;kvo&#x7684;&#x89E6;&#x53D1;&#x8BBE;&#x5B9A;&#x6761;&#x4EF6;&#xFF1A;&#x6539;&#x53D8;&#x7684;&#x503C;&#x7B26;&#x5408;&#x67D0;&#x4E2A;&#x6761;&#x4EF6;&#x65F6;&#x518D;&#x89E6;&#x53D1;kvo&#xFF09;&#xFF1F;">KVO&#x7684;&#x5E95;&#x5C42;&#x5B9E;&#x73B0;&#xFF1F;&#x5982;&#x4F55;&#x53D6;&#x6D88;&#x7CFB;&#x7EDF;&#x9ED8;&#x8BA4;&#x7684;KVO&#x5E76;&#x624B;&#x52A8;&#x89E6;&#x53D1;&#xFF08;&#x7ED9;KVO&#x7684;&#x89E6;&#x53D1;&#x8BBE;&#x5B9A;&#x6761;&#x4EF6;&#xFF1A;&#x6539;&#x53D8;&#x7684;&#x503C;&#x7B26;&#x5408;&#x67D0;&#x4E2A;&#x6761;&#x4EF6;&#x65F6;&#x518D;&#x89E6;&#x53D1;KVO&#xFF09;&#xFF1F;</h4>
+<p><a href="https://tech.glowing.com/cn/implement-kvo/" target="_blank">https://tech.glowing.com/cn/implement-kvo/</a></p>
 <ul>
-<li>&#x6570;&#x7EC4;&#x662F;&#x4E00;&#x5757;&#x8FDE;&#x7EED;&#x7684;&#x5185;&#x5B58;&#x3002;&#x968F;&#x673A;&#x8BBF;&#x95EE;&#x6027;&#x5F3A;&#xFF0C;&#x67E5;&#x627E;&#x901F;&#x5EA6;&#x5FEB;&#x3002;&#x63D2;&#x5165;&#x548C;&#x5220;&#x9664;&#x6548;&#x7387;&#x4F4E;&#xFF0C;&#x53EF;&#x80FD;&#x6D6A;&#x8D39;&#x5185;&#x5B58;&#xFF0C;&#x5185;&#x5B58;&#x7A7A;&#x95F4;&#x8981;&#x6C42;&#x9AD8;&#xFF0C;&#x5FC5;&#x987B;&#x6709;&#x8DB3;&#x591F;&#x7684;&#x8FDE;&#x7EED;&#x5185;&#x5B58;&#x7A7A;&#x95F4;&#x3002;&#x63D2;&#x5165;&#x548C;&#x5220;&#x9664;&#x662F;On&#xFF0C;&#x67E5;&#x8BE2;&#x662F;O1</li>
-<li>&#x94FE;&#x8868;&#x63D2;&#x5165;&#x5220;&#x9664;&#x901F;&#x5EA6;&#x5FEB;&#xFF0C;&#x5185;&#x5B58;&#x5229;&#x7528;&#x7387;&#x9AD8;&#xFF0C;&#x4E0D;&#x6D6A;&#x8D39;&#x5185;&#x5B58;&#xFF0C;&#x5927;&#x5C0F;&#x6CA1;&#x6709;&#x56FA;&#x5B9A;&#xFF0C;&#x5BB9;&#x6613;&#x6269;&#x5C55;&#x3002;&#x63D2;&#x5165;&#x548C;&#x5220;&#x9664;&#x662F;O1&#xFF0C;&#x67E5;&#x8BE2;&#x662F;On</li>
+<li>&#x539F;&#x7406; isa-swizzling</li>
 </ul>
-<h4 id="&#x54C8;&#x5E0C;&#x8868;&#x662F;&#x5982;&#x4F55;&#x5B9E;&#x73B0;&#x7684;&#xFF1F;&#x5982;&#x4F55;&#x89E3;&#x51B3;&#x5730;&#x5740;&#x51B2;&#x7A81;&#xFF1F;">&#x54C8;&#x5E0C;&#x8868;&#x662F;&#x5982;&#x4F55;&#x5B9E;&#x73B0;&#x7684;&#xFF1F;&#x5982;&#x4F55;&#x89E3;&#x51B3;&#x5730;&#x5740;&#x51B2;&#x7A81;&#xFF1F;</h4>
-<p>&#x3002;&#x3002;&#x3002;</p>
-<h4 id="&#x6392;&#x5E8F;&#x9898;&#xFF1A;&#x5192;&#x6CE1;&#x6392;&#x5E8F;&#xFF0C;&#x9009;&#x62E9;&#x6392;&#x5E8F;&#xFF0C;&#x63D2;&#x5165;&#x6392;&#x5E8F;&#xFF0C;&#x5FEB;&#x901F;&#x6392;&#x5E8F;&#xFF08;&#x4E8C;&#x8DEF;&#xFF0C;&#x4E09;&#x8DEF;&#xFF09;&#x80FD;&#x5199;&#x51FA;&#x90A3;&#x4E9B;&#xFF1F;">&#x6392;&#x5E8F;&#x9898;&#xFF1A;&#x5192;&#x6CE1;&#x6392;&#x5E8F;&#xFF0C;&#x9009;&#x62E9;&#x6392;&#x5E8F;&#xFF0C;&#x63D2;&#x5165;&#x6392;&#x5E8F;&#xFF0C;&#x5FEB;&#x901F;&#x6392;&#x5E8F;&#xFF08;&#x4E8C;&#x8DEF;&#xFF0C;&#x4E09;&#x8DEF;&#xFF09;&#x80FD;&#x5199;&#x51FA;&#x90A3;&#x4E9B;&#xFF1F;</h4>
-<p><a href="https://www.cnblogs.com/onepixel/p/7674659.html" target="_blank">https://www.cnblogs.com/onepixel/p/7674659.html</a></p>
-<p>&#x3002;&#x3002;&#x3002;</p>
-<h4 id="&#x94FE;&#x8868;&#x9898;&#xFF1A;&#x5982;&#x4F55;&#x68C0;&#x6D4B;&#x94FE;&#x8868;&#x4E2D;&#x662F;&#x5426;&#x6709;&#x73AF;&#xFF1F;&#x5982;&#x4F55;&#x5220;&#x9664;&#x94FE;&#x8868;&#x4E2D;&#x7B49;&#x4E8E;&#x67D0;&#x4E2A;&#x503C;&#x7684;&#x6240;&#x6709;&#x8282;&#x70B9;&#xFF1F;">&#x94FE;&#x8868;&#x9898;&#xFF1A;&#x5982;&#x4F55;&#x68C0;&#x6D4B;&#x94FE;&#x8868;&#x4E2D;&#x662F;&#x5426;&#x6709;&#x73AF;&#xFF1F;&#x5982;&#x4F55;&#x5220;&#x9664;&#x94FE;&#x8868;&#x4E2D;&#x7B49;&#x4E8E;&#x67D0;&#x4E2A;&#x503C;&#x7684;&#x6240;&#x6709;&#x8282;&#x70B9;&#xFF1F;</h4>
-<p>&#x3002;&#x3002;&#x3002;</p>
-<h4 id="&#x6570;&#x7EC4;&#x9898;&#xFF1A;&#x5982;&#x4F55;&#x5728;&#x6709;&#x5E8F;&#x6570;&#x7EC4;&#x4E2D;&#x627E;&#x51FA;&#x548C;&#x7B49;&#x4E8E;&#x7ED9;&#x5B9A;&#x503C;&#x7684;&#x4E24;&#x4E2A;&#x5143;&#x7D20;&#xFF1F;&#x5982;&#x4F55;&#x5408;&#x5E76;&#x4E24;&#x4E2A;&#x6709;&#x5E8F;&#x7684;&#x6570;&#x7EC4;&#x4E4B;&#x540E;&#x4FDD;&#x6301;&#x6709;&#x5E8F;&#xFF1F;">&#x6570;&#x7EC4;&#x9898;&#xFF1A;&#x5982;&#x4F55;&#x5728;&#x6709;&#x5E8F;&#x6570;&#x7EC4;&#x4E2D;&#x627E;&#x51FA;&#x548C;&#x7B49;&#x4E8E;&#x7ED9;&#x5B9A;&#x503C;&#x7684;&#x4E24;&#x4E2A;&#x5143;&#x7D20;&#xFF1F;&#x5982;&#x4F55;&#x5408;&#x5E76;&#x4E24;&#x4E2A;&#x6709;&#x5E8F;&#x7684;&#x6570;&#x7EC4;&#x4E4B;&#x540E;&#x4FDD;&#x6301;&#x6709;&#x5E8F;&#xFF1F;</h4>
-<p>&#x3002;&#x3002;&#x3002;</p>
-<h4 id="&#x4E8C;&#x53C9;&#x6811;&#x9898;&#xFF1A;&#x5982;&#x4F55;&#x53CD;&#x8F6C;&#x4E8C;&#x53C9;&#x6811;&#xFF1F;&#x5982;&#x4F55;&#x9A8C;&#x8BC1;&#x4E24;&#x4E2A;&#x4E8C;&#x53C9;&#x6811;&#x662F;&#x5B8C;&#x5168;&#x76F8;&#x7B49;&#x7684;&#xFF1F;">&#x4E8C;&#x53C9;&#x6811;&#x9898;&#xFF1A;&#x5982;&#x4F55;&#x53CD;&#x8F6C;&#x4E8C;&#x53C9;&#x6811;&#xFF1F;&#x5982;&#x4F55;&#x9A8C;&#x8BC1;&#x4E24;&#x4E2A;&#x4E8C;&#x53C9;&#x6811;&#x662F;&#x5B8C;&#x5168;&#x76F8;&#x7B49;&#x7684;&#xFF1F;</h4>
-<p>&#x3002;&#x3002;&#x3002;</p>
+<p>&#x5F53;&#x88AB;&#x89C2;&#x5BDF;&#x5BF9;&#x8C61;&#x7684;&#x5C5E;&#x6027;&#x503C;&#x53D1;&#x751F;&#x53D8;&#x5316;&#x65F6;&#xFF0C;&#x89C2;&#x5BDF;&#x8005;&#x5BF9;&#x8C61;&#x5C31;&#x4F1A;&#x6536;&#x5230;&#x901A;&#x77E5;&#x3002;</p>
+<p>KVO&#x662F;&#x57FA;&#x4E8E;runtime&#x7684;isa-swizzling&#x6280;&#x672F;&#x5B9E;&#x73B0;&#x3002;&#x4E3A;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#x7684;&#x5C5E;&#x6027;&#x8BBE;&#x7F6E;&#x89C2;&#x5BDF;&#x8005;&#x65F6;&#xFF0C;&#x88AB;&#x89C2;&#x5BDF;&#x7684;&#x5BF9;&#x8C61;&#x7684;isa&#x6307;&#x9488;&#x4F1A;&#x88AB;&#x4FEE;&#x6539;&#xFF0C;&#x6307;&#x5411;&#x4E00;&#x4E2A;&#x4E2D;&#x95F4;&#x7C7B;&#xFF0C;&#x8FD9;&#x4E2A;&#x4E2D;&#x95F4;&#x7C7B;&#x662F;&#x539F;&#x6765;&#x7C7B;&#x7684;&#x5B50;&#x7C7B;&#xFF0C;&#x91CD;&#x5199;&#x4E86;&#x7236;&#x7C7B;&#x7684;setter&#x65B9;&#x6CD5;&#xFF0C;&#x5728;&#x91CD;&#x5199;&#x7684;setter&#x65B9;&#x6CD5;&#x524D;&#x540E;&#x901A;&#x77E5;&#x89C2;&#x5BDF;&#x8005;&#x5BF9;&#x8C61;&#x503C;&#x7684;&#x6539;&#x53D8;&#xFF0C;&#x6700;&#x540E;&#x628A;&#x8FD9;&#x4E2A;isa&#x6307;&#x9488;&#x6307;&#x5411;&#x65B0;&#x521B;&#x5EFA;&#x7684;&#x7C7B;&#xFF0C;&#x5BF9;&#x8C61;&#x4E5F;&#x53D8;&#x6210;&#x4E86;&#x65B0;&#x521B;&#x5EFA;&#x7C7B;&#x7684;&#x5B50;&#x7C7B;&#x3002;</p>
+<ul>
+<li>KVOController&#x7684;&#x6E90;&#x7801;&#x5206;&#x6790;
+<a href="https://github.com/draveness/analyze/blob/master/contents/KVOController/KVOController.md" target="_blank">https://github.com/draveness/analyze/blob/master/contents/KVOController/KVOController.md</a>
+<a href="https://satanwoo.github.io/2016/02/27/FBKVOController/" target="_blank">https://satanwoo.github.io/2016/02/27/FBKVOController/</a></li>
+</ul>
+<h4 id="&#x4F7F;&#x7528;&#x7684;&#x5751;">&#x4F7F;&#x7528;&#x7684;&#x5751;</h4>
+<ul>
+<li>&#x5FC5;&#x987B;&#x5728;&#x5408;&#x9002;&#x7684;&#x65F6;&#x95F4;&#xFF0C;&#x9700;&#x8981;&#x624B;&#x52A8;&#x79FB;&#x9664;&#x89C2;&#x5BDF;&#x8005;&#xFF0C;&#x4E0D;&#x7136;&#x53EF;&#x80FD;&#x4F1A;&#x5F15;&#x8D77;crash&#x3002;</li>
+<li>&#x6CE8;&#x518C;&#x89C2;&#x5BDF;&#x8005;&#x7684;&#x4EE3;&#x7801;&#x548C;&#x4E8B;&#x4EF6;&#x53D1;&#x751F;&#x5904;&#x7684;&#x4EE3;&#x7801;&#x4E0A;&#x4E0B;&#x6587;&#x4E0D;&#x540C;&#xFF0C;&#x4F1A;&#x5206;&#x5E03;&#x5728;&#x4E0D;&#x540C;&#x7684;&#x65B9;&#x6CD5;&#x4E2D;&#x3002;</li>
+<li>&#x9700;&#x8981;&#x590D;&#x5199;&#x5F88;&#x957F;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x6BD4;&#x8F83;&#x9EBB;&#x70E6;&#x3002;</li>
+<li>&#x5982;&#x679C;&#x6709;&#x591A;&#x4E2A;&#x89C2;&#x5BDF;&#x5C5E;&#x6027;&#xFF0C;&#x5C31;&#x9700;&#x8981;&#x5728;&#x5904;&#x7406;&#x65B9;&#x6CD5;&#x4E2D;&#x8FDB;&#x884C;if else&#x7684;&#x5224;&#x65AD;&#xFF0C;&#x53EF;&#x8BFB;&#x6027;&#x4E0D;&#x9AD8;&#x3002;</li>
+</ul>
 
                                 
                                 </section>
@@ -456,12 +459,12 @@
 
             
                 
-                <a href="../multiThread/" class="navigation navigation-prev " aria-label="Previous page: 多线程">
+                <a href="category.html" class="navigation navigation-prev " aria-label="Previous page: 分类">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="../system/" class="navigation navigation-next " aria-label="Next page: 系统原理">
+                <a href="atomic.html" class="navigation navigation-next " aria-label="Next page: atomic">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -472,7 +475,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"数据结构","level":"1.9","depth":1,"next":{"title":"系统原理","level":"1.10","depth":1,"path":"system/README.md","ref":"system/README.md","articles":[]},"previous":{"title":"多线程","level":"1.8","depth":1,"path":"multiThread/README.md","ref":"multiThread/README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"datastruct/README.md","mtime":"2020-01-04T13:09:50.871Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-01-04T14:01:04.557Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"KVO && KVC","level":"1.4.2","depth":2,"next":{"title":"atomic","level":"1.4.3","depth":2,"path":"Runtime/atomic.md","ref":"Runtime/atomic.md","articles":[]},"previous":{"title":"分类","level":"1.4.1","depth":2,"path":"Runtime/category.md","ref":"Runtime/category.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Runtime/kvo.md","mtime":"2020-01-04T13:49:12.743Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-01-04T14:01:04.557Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

@@ -1,0 +1,717 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>关联对象 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../runloop/" />
+    
+    
+    <link rel="prev" href="atomic.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    前言
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../MemoryManager/">
+            
+                <a href="../MemoryManager/">
+            
+                    
+                    内存管理
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../MemoryManager/weak.html">
+            
+                <a href="../MemoryManager/weak.html">
+            
+                    
+                    weak 实现原理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../MemoryManager/autoreleasepool.html">
+            
+                <a href="../MemoryManager/autoreleasepool.html">
+            
+                    
+                    Autoreleasepool 实现原理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../MemoryManager/memoryleak.html">
+            
+                <a href="../MemoryManager/memoryleak.html">
+            
+                    
+                    内存泄漏
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../Basic/">
+            
+                <a href="../Basic/">
+            
+                    
+                    Foudation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Runtime
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="category.html">
+            
+                <a href="category.html">
+            
+                    
+                    分类
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="kvo.html">
+            
+                <a href="kvo.html">
+            
+                    
+                    KVO && KVC
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="atomic.html">
+            
+                <a href="atomic.html">
+            
+                    
+                    atomic
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.4.4" data-path="associate.html">
+            
+                <a href="associate.html">
+            
+                    
+                    关联对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../runloop/">
+            
+                <a href="../runloop/">
+            
+                    
+                    Runloop
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../design/">
+            
+                <a href="../design/">
+            
+                    
+                    设计模式
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../design/architecture.html">
+            
+                <a href="../design/architecture.html">
+            
+                    
+                    架构
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../network/">
+            
+                <a href="../network/">
+            
+                    
+                    网络题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../multiThread/">
+            
+                <a href="../multiThread/">
+            
+                    
+                    多线程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../datastruct/">
+            
+                <a href="../datastruct/">
+            
+                    
+                    数据结构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="../system/">
+            
+                <a href="../system/">
+            
+                    
+                    系统原理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="../performance/">
+            
+                <a href="../performance/">
+            
+                    
+                    性能优化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="../apply/">
+            
+                <a href="../apply/">
+            
+                    
+                    实际应用
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >关联对象</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h2 id="associated-object">Associated Object</h2>
+<p>&#x9996;&#x5148; runtime &#x4E3A;&#x6211;&#x4EEC;&#x63D0;&#x4F9B;&#x4E86;&#x4E09;&#x4E2A;&#x5173;&#x8054;&#x5BF9;&#x8C61;&#x7684;&#x4E09;&#x4E2A;&#x65B9;&#x6CD5;&#xFF1A;</p>
+<pre><code>id objc_getAssociatedObject(id object, const void *key);
+
+void objc_setAssociatedObject(id object, const void *key, id value, objc_AssociationPolicy policy);
+</code></pre><p>&#x4E09;&#x4E2A;&#x65B9;&#x6CD5;&#x7684;&#x4F5C;&#x7528;&#x5206;&#x522B;&#x662F;&#xFF1A;</p>
+<ul>
+<li>&#x6839;&#x636E; key &#x83B7;&#x53D6;&#x5173;&#x8054;&#x5BF9;&#x8C61;&#x3002;</li>
+<li>&#x4EE5;&#x952E;&#x503C;&#x5BF9;&#x7684;&#x5F62;&#x5F0F;&#x6DFB;&#x52A0;&#x5173;&#x8054;&#x5BF9;&#x8C61;&#x3002;</li>
+<li>&#x79FB;&#x9664;&#x6240;&#x6709;&#x5173;&#x8054;&#x5BF9;&#x8C61;&#x3002;</li>
+</ul>
+<h4 id="objcsetassociatedobject"><code>objc_setAssociatedObject</code></h4>
+<p>&#x9996;&#x5148;&#x662F; <code>objc_setAssociatedObject</code> &#x65B9;&#x6CD5;</p>
+<pre><code>void objc_setAssociatedObject(id object, const void *key, id value, objc_AssociationPolicy policy) {
+    _object_set_associative_reference(object, (void *)key, value, policy);
+}
+</code></pre><p>&#x5185;&#x90E8;&#x8C03;&#x7528; <code>_object_set_associative_reference</code> &#x6765;&#x5B8C;&#x6210;&#x5173;&#x8054;&#x5BF9;&#x8C61;&#x7684;&#x8BBE;&#x7F6E;</p>
+<pre><code>void _object_set_associative_reference(id object, void *key, id value, uintptr_t policy) {
+    {
+        AssociationsManager manager;
+        AssociationsHashMap &amp;associations(manager.associations());
+        disguised_ptr_t disguised_object = DISGUISE(object);
+        if (new_value) {
+            if (i != associations.end()) {
+                ObjectAssociationMap *refs = i-&gt;second;
+                ObjectAssociationMap::iterator j = refs-&gt;find(key);
+
+            }
+        }
+    }
+}
+</code></pre><p>&#x4E0A;&#x8FF0;&#x7684;&#x6E90;&#x4EE3;&#x7801;&#x53EF;&#x4EE5;&#x53D1;&#x73B0;&#x51E0;&#x4E2A;&#x65B0;&#x7684;&#x7C7B;&#x548C;&#x6570;&#x636E;&#x7ED3;&#x6784;&#xFF1A;</p>
+<ul>
+<li>AssociationsManager</li>
+<li>AssociationsHashMap</li>
+<li>ObjectAssociationMap</li>
+<li>ObjectAssociation</li>
+</ul>
+<p>&#x6211;&#x4EEC;&#x6765;&#x5148;&#x770B;&#x770B;&#x8FD9;&#x51E0;&#x4E2A;&#x7C7B;&#x6216;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x5230;&#x5E95;&#x662F;&#x7528;&#x6765;&#x5E72;&#x4EC0;&#x4E48;&#x7684;&#xFF1F;</p>
+<h4 id="associationsmanager">AssociationsManager</h4>
+<p><code>AssociationsManager</code>&#x5728;&#x4EE3;&#x7801;&#x4E2D;&#x7684;&#x5B9A;&#x4E49;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code>spinlock_t AssociationsManagerLock;
+
+class AssociationsManager {
+    // associative references: object pointer -&gt; PtrPtrHashMap.
+    static AssociationsHashMap *_map;
+public:
+    AssociationsManager()   { AssociationsManagerLock.lock(); }
+    ~AssociationsManager()  { AssociationsManagerLock.unlock(); }
+
+    AssociationsHashMap &amp;associations() {
+        if (_map == NULL)
+            _map = new AssociationsHashMap();
+        return *_map;
+    }
+};
+</code></pre><ul>
+<li>&#x5B83;&#x7EF4;&#x62A4;&#x7740; AssociationsHashMap &#x548C; AssociationsManagerLock &#x4E24;&#x4E2A;&#x5355;&#x4F8B;&#x3002;AssociationsManagerLock &#x662F;&#x4E00;&#x4E2A;&#x4E92;&#x65A5;&#x9501;&#x3002;</li>
+<li>&#x521D;&#x59CB;&#x5316;&#x7684;&#x65F6;&#x5019;&#x52A0;&#x9501;&#xFF0C;&#x6790;&#x6784;&#x7684;&#x65F6;&#x5019;&#x89E3;&#x9501;&#x3002;</li>
+<li>&#x901A;&#x8FC7; associations() &#x65B9;&#x6CD5;&#x83B7;&#x53D6;&#x4E00;&#x4E2A;&#x5168;&#x5C40;&#x7684; AssociationsHashMap&#x3002;</li>
+<li>&#x4F7F;&#x7528;&#x9501;&#x7684;&#x673A;&#x5236;&#x6765;&#x4FDD;&#x8BC1;&#x5BF9; AssociationsHashMap &#x7684;&#x64CD;&#x4F5C;&#x662F;&#x7EBF;&#x7A0B;&#x5B89;&#x5168;&#x7684;&#x3002;</li>
+</ul>
+<h4 id="associationshashmap">AssociationsHashMap</h4>
+<p><code>AssociationsHashMap</code> &#x7684;&#x7C7B;&#x578B;&#x58F0;&#x660E;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code>typedef hash_map&lt;disguised_ptr_t, ObjectAssociationMap *&gt; AssociationsHashMap;
+</code></pre><p>&#x5B83;&#x662F;&#x4E00;&#x4E2A;&#x6563;&#x5217;&#x8868;&#xFF0C;&#x662F;&#x4EE5; disguised_ptr_t &#x4E3A;&#x952E;&#xFF0C;ObjectAssociationMap &#x7C7B;&#x578B;&#x5B9E;&#x4F8B;&#x4E3A;&#x503C;&#x7684;&#x6620;&#x5C04;&#x65B9;&#x5F0F;&#x6765;&#x4FDD;&#x5B58;&#x5BF9;&#x8C61;&#x3002;</p>
+<h4 id="objectassociationmap">ObjectAssociationMap</h4>
+<p><code>ObjectAssociationMap</code> &#x7684;&#x7C7B;&#x578B;&#x5B9A;&#x4E49;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code>typedef hash_map&lt;void *, ObjcAssociation&gt; ObjectAssociationMap;
+</code></pre><p>&#x4FDD;&#x5B58;&#x4E86;&#x4ECE; key &#x5230; ObjcAssociation &#x7684;&#x6620;&#x5C04;&#xFF0C;&#x8FD9;&#x4E2A;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x4FDD;&#x5B58;&#x4E86;&#x5F53;&#x524D;&#x5BF9;&#x8C61;&#x5BF9;&#x5E94;&#x7684;&#x6240;&#x6709;&#x5173;&#x8054;&#x5BF9;&#x8C61;&#x3002;</p>
+<h4 id="objcassociation">ObjcAssociation</h4>
+<pre><code>class ObjcAssociation {
+   uintptr_t _policy;
+   id _value;
+public:
+   ObjcAssociation(uintptr_t policy, id value) : _policy(policy), _value(value) {}
+   ObjcAssociation() : _policy(0), _value(nil) {}
+
+   uintptr_t policy() const { return _policy; }
+   id value() const { return _value; }
+
+   bool hasValue() { return _value != nil; }
+};
+</code></pre><p>&#x8BE5;&#x5BF9;&#x8C61;&#x5185;&#x5305;&#x542B;&#x4E86; policy &#x548C; value&#x3002;</p>
+<p>&#x73B0;&#x5728;&#x6211;&#x4EEC;&#x91CD;&#x65B0;&#x6765;&#x770B; objc_setAssociatedObject &#x7684;&#x5177;&#x4F53;&#x5B9E;&#x73B0;&#xFF0C;&#x6211;&#x4EEC;&#x4F7F;&#x7528;&#x4E00;&#x5F20;&#x6D41;&#x7A0B;&#x56FE;&#x8868;&#x793A;&#xFF1A;</p>
+<p><img src="media/15736628242691/2016-06-08-objc-ao-associateobjcect.png-1000width" alt="2016-06-08-objc-ao-associateobjcect"></p>
+<p>&#x8FD9;&#x8FB9;&#x6709;&#x4E24;&#x79CD;&#x60C5;&#x51B5;&#xFF1A;</p>
+<ul>
+<li>new_value != nil&#xFF0C;&#x6DFB;&#x52A0;&#x548C;&#x66F4;&#x65B0;&#x5173;&#x8054;&#x5BF9;&#x8C61;&#x3002;</li>
+<li>new_value == nil&#xFF0C;&#x5220;&#x9664;&#x4E00;&#x4E2A;&#x5173;&#x8054;&#x5BF9;&#x8C61;&#x3002;</li>
+</ul>
+<p>&#x8BBE;&#x7F6E;&#x5173;&#x8054;&#x5BF9;&#x8C61; </p>
+<pre><code>  // create the new association (first time).
+ ObjectAssociationMap *refs = new ObjectAssociationMap;
+ associations[disguised_object] = refs;
+ (*refs)[key] = ObjcAssociation(policy, new_value);
+ object-&gt;setHasAssociatedObjects();
+</code></pre><p>&#x66F4;&#x65B0;&#x5173;&#x8054;&#x5BF9;&#x8C61;</p>
+<pre><code>// secondary table exists
+ ObjectAssociationMap *refs = i-&gt;second;
+ ObjectAssociationMap::iterator j = refs-&gt;find(key);
+ if (j != refs-&gt;end()) {
+     old_association = j-&gt;second;
+     j-&gt;second = ObjcAssociation(policy, new_value);
+ } else {
+     (*refs)[key] = ObjcAssociation(policy, new_value);
+ }
+</code></pre><p>&#x5220;&#x9664;&#x5173;&#x8054;&#x5BF9;&#x8C61;</p>
+<pre><code>AssociationsHashMap::iterator i = associations.find(disguised_object);
+if (i !=  associations.end()) {
+ ObjectAssociationMap *refs = i-&gt;second;
+ ObjectAssociationMap::iterator j = refs-&gt;find(key);
+ if (j != refs-&gt;end()) {
+     old_association = j-&gt;second;
+     refs-&gt;erase(j);
+ }
+}
+</code></pre><ul>
+<li>&#x4F7F;&#x7528; old_association &#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x4E34;&#x65F6;&#x7684; ObjcAssociation &#x5BF9;&#x8C61;&#x3002;</li>
+<li>&#x901A;&#x8FC7; acquireValue &#x51FD;&#x6570;&#x5BF9; new_value &#x8FDB;&#x884C; retain &#x6216; copy &#x64CD;&#x4F5C;&#x3002;</li>
+<li>&#x521D;&#x59CB;&#x5316;&#x4E00;&#x4E2A; AssociationsManager&#xFF0C;&#x83B7;&#x53D6;&#x552F;&#x4E00;&#x5173;&#x8054;&#x5BF9;&#x8C61;&#x7684;&#x54C8;&#x5E0C;&#x8868; AssociationsHashMap&#x3002;</li>
+<li>&#x5148;&#x4F7F;&#x7528; DISGUISE(object) &#x4F5C;&#x4E3A; key &#x5BFB;&#x627E;&#x5BF9;&#x5E94;&#x7684; ObjectAssociationMap&#x3002;</li>
+<li>&#x5982;&#x679C;&#x6CA1;&#x627E;&#x5230;&#xFF0C;&#x521D;&#x59CB;&#x5316;&#x4E00;&#x4E2A; ObjectAssociationMap&#xFF0C;&#x518D;&#x5B9E;&#x4F8B;&#x5316; ObjcAssociation &#x5BF9;&#x8C61;&#x6DFB;&#x52A0;&#x5230; map &#x4E2D;&#x3002;&#x5E76;&#x8C03;&#x7528; setHasAssociatedObjects &#x8868;&#x660E;&#x5F53;&#x524D;&#x5BF9;&#x8C61;&#x542B;&#x6709;&#x5173;&#x8054;&#x5BF9;&#x8C61;&#x3002;</li>
+<li>&#x5982;&#x679C;&#x627E;&#x5230;&#x5BF9;&#x5E94; ObjectAssociationMap&#xFF0C;&#x5C31;&#x770B; key &#x662F;&#x5426;&#x5B58;&#x5728;&#xFF0C;&#x6765;&#x51B3;&#x5B9A;&#x662F;&#x66F4;&#x65B0;&#x539F;&#x6709;&#x7684;&#x5173;&#x8054;&#x5BF9;&#x8C61;&#x8FD8;&#x662F;&#x589E;&#x52A0;&#x4E00;&#x4E2A;&#x3002;</li>
+<li>&#x5230;&#x6700;&#x540E;&#x539F;&#x6765;&#x7684;&#x5173;&#x8054;&#x5BF9;&#x8C61;&#x6709;&#x503C;&#x7684;&#x8BDD;&#xFF0C;&#x4F1A;&#x8C03;&#x7528; ReleaseValue &#x91CA;&#x653E;&#x5173;&#x8054;&#x5BF9;&#x8C61;&#x7684;&#x503C;&#x3002;</li>
+</ul>
+<h4 id="objcgetassociatedobject">objc_getAssociatedObject</h4>
+<pre><code>id _object_get_associative_reference(id object, void *key) {
+    id value = nil;
+    uintptr_t policy = OBJC_ASSOCIATION_ASSIGN;
+    {
+        AssociationsManager manager;
+        AssociationsHashMap &amp;associations(manager.associations());
+        disguised_ptr_t disguised_object = DISGUISE(object);
+        AssociationsHashMap::iterator i = associations.find(disguised_object);
+        if (i != associations.end()) {
+            ObjectAssociationMap *refs = i-&gt;second;
+            ObjectAssociationMap::iterator j = refs-&gt;find(key);
+            if (j != refs-&gt;end()) {
+                ObjcAssociation &amp;entry = j-&gt;second;
+                value = entry.value();
+                policy = entry.policy();
+                if (policy &amp; OBJC_ASSOCIATION_GETTER_RETAIN) {
+                    objc_retain(value);
+                }
+            }
+        }
+    }
+    if (value &amp;&amp; (policy &amp; OBJC_ASSOCIATION_GETTER_AUTORELEASE)) {
+        objc_autorelease(value);
+    }
+    return value;
+}
+</code></pre><ul>
+<li>&#x83B7;&#x53D6;&#x5168;&#x5C40;&#x7684;&#x54C8;&#x5E0C;&#x8868; AssociationsHashMap</li>
+<li>&#x901A;&#x8FC7; DISGUISE(object) &#x4E3A;key&#xFF0C;&#x83B7;&#x53D6;&#x54C8;&#x5E0C;&#x8868;&#x4E2D;&#x5B58;&#x50A8;&#x5BF9;&#x5E94;&#x7684; ObjectAssociationMap&#x3002;</li>
+<li>&#x4EE5; void *key &#x4E3A; key &#x67E5;&#x627E; ObjcAssociation&#x3002;</li>
+<li>&#x6839;&#x636E; policy &#x8FDB;&#x884C;&#x76F8;&#x5E94;&#x7684;&#x5185;&#x5B58;&#x7BA1;&#x7406;&#x3002;</li>
+</ul>
+<pre><code>if (policy &amp; OBJC_ASSOCIATION_GETTER_RETAIN) {
+    objc_retain(value);
+}
+
+if (value &amp;&amp; (policy &amp; OBJC_ASSOCIATION_GETTER_AUTORELEASE)) {
+        objc_autorelease(value);
+}
+</code></pre><p>5&#x3001;&#x6700;&#x540E;&#x8FD4;&#x56DE;&#x5173;&#x8054;&#x5BF9;&#x8C61;&#x7684;&#x503C;&#x3002;</p>
+<h4 id="objcremoveassociatedobjects">objc_removeAssociatedObjects</h4>
+<pre><code>void objc_removeAssociatedObjects(id object) 
+{
+    if (object &amp;&amp; object-&gt;hasAssociatedObjects()) {
+        _object_remove_assocations(object);
+    }
+}
+</code></pre><ul>
+<li>&#x4F1A;&#x5148;&#x901A;&#x8FC7; hasAssociatedObjects &#x6765;&#x5224;&#x65AD;&#x662F;&#x5426;&#x6709;&#x5173;&#x8054;&#x5BF9;&#x8C61;&#x3002;&#x6CA1;&#x6709;&#x5219;&#x8C03;&#x7528;&#x7ED3;&#x675F;&#x3002;</li>
+<li>&#x8C03;&#x7528;<code>_object_remove_assocations</code>&#x65B9;&#x6CD5;&#x3002;</li>
+</ul>
+<pre><code>void _object_remove_assocations(id object) {
+    vector&lt; ObjcAssociation,ObjcAllocator&lt;ObjcAssociation&gt; &gt; elements;
+    {
+        AssociationsManager manager;
+        AssociationsHashMap &amp;associations(manager.associations());
+        if (associations.size() == 0) return;
+        disguised_ptr_t disguised_object = DISGUISE(object);
+        AssociationsHashMap::iterator i = associations.find(disguised_object);
+        if (i != associations.end()) {
+            // copy all of the associations that need to be removed.
+            ObjectAssociationMap *refs = i-&gt;second;
+            for (ObjectAssociationMap::iterator j = refs-&gt;begin(), end = refs-&gt;end(); j != end; ++j) {
+                elements.push_back(j-&gt;second);
+            }
+            // remove the secondary table.
+            delete refs;
+            associations.erase(i);
+        }
+    }
+    // the calls to releaseValue() happen outside of the lock.
+    for_each(elements.begin(), elements.end(), ReleaseValue());
+}
+</code></pre><ul>
+<li>&#x83B7;&#x53D6;&#x5168;&#x5C40; AssociationsHashMap&#x3002;</li>
+<li>&#x5224;&#x65AD;&#x54C8;&#x5E0C;&#x8868;&#x5927;&#x5C0F;&#x662F;&#x5426;&#x4E3A; 0&#x3002;</li>
+<li>&#x4EE5; DISGUISE(object) &#x4E3A; key &#x67E5;&#x627E; ObjectAssociationMap&#x3002;</li>
+<li>&#x67E5;&#x627E;&#x5230;&#x6240;&#x6709;&#x5173;&#x8054;&#x5BF9;&#x8C61;&#xFF0C;&#x5B58;&#x653E;&#x5728; elements &#x4E2D;&#x3002;</li>
+<li>&#x6700;&#x540E; elements &#x4E2D;&#x7684;&#x5BF9;&#x8C61;&#x8C03;&#x7528; ReleaseValue&#xFF0C;&#x91CA;&#x653E;&#x6240;&#x6709;&#x4E0D;&#x9700;&#x8981;&#x7684;&#x503C;&#x3002;</li>
+</ul>
+<h4 id="&#x5C0F;&#x7ED3;">&#x5C0F;&#x7ED3;</h4>
+<ul>
+<li>&#x5173;&#x8054;&#x5BF9;&#x8C61;&#x5176;&#x5B9E;&#x5C31;&#x662F; ObjcAssociation &#x5BF9;&#x8C61;&#x3002;</li>
+<li>&#x5173;&#x8054;&#x5BF9;&#x8C61;&#x7531; AssociationsManager &#x7BA1;&#x7406;&#x5E76;&#x5728; AssociationsHashMap &#x5B58;&#x50A8;&#x3002;</li>
+<li>&#x5BF9;&#x8C61;&#x7684;&#x6307;&#x9488;&#x53CA;&#x5176;&#x5BF9;&#x5E94;&#x7684; ObjectAssociationMap &#x4EE5;&#x952E;&#x503C;&#x5BF9;&#x7684;&#x5F62;&#x5F0F;&#x5B58;&#x50A8;&#x5728; AssociationsHashMap &#x4E2D;&#x3002;</li>
+<li>ObjectAssociationMap &#x5219;&#x662F;&#x7528;&#x4E8E;&#x5B58;&#x50A8;&#x5173;&#x8054;&#x5BF9;&#x8C61;&#x7684;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x3002;</li>
+<li>&#x6BCF;&#x4E2A;&#x5BF9;&#x8C61;&#x90FD;&#x6709;&#x4E00;&#x4E2A;&#x6807;&#x8BB0;&#x4E3A; has_assoc &#x8868;&#x793A;&#x5BF9;&#x8C61;&#x662F;&#x5426;&#x542B;&#x6709;&#x5173;&#x8054;&#x5BF9;&#x8C61;&#x3002;</li>
+</ul>
+<h4 id="&#x5F15;&#x7528;">&#x5F15;&#x7528;</h4>
+<ul>
+<li><a href="https://draveness.me/ao" target="_blank">https://draveness.me/ao</a></li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="atomic.html" class="navigation navigation-prev " aria-label="Previous page: atomic">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../runloop/" class="navigation navigation-next " aria-label="Next page: Runloop">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"关联对象","level":"1.4.4","depth":2,"next":{"title":"Runloop","level":"1.5","depth":1,"path":"runloop/README.md","ref":"runloop/README.md","articles":[]},"previous":{"title":"atomic","level":"1.4.3","depth":2,"path":"Runtime/atomic.md","ref":"Runtime/atomic.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Runtime/associate.md","mtime":"2020-01-04T14:02:22.612Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-01-04T14:01:04.557Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

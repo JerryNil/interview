@@ -92,3 +92,15 @@ AFNetworking 2.x 版本的时候，内部还使用runloop来进行线程保活�
 + 它是一个线程安全类，可以在多线程环境下使用同一个 NSNotificationCenter 对象而不需要加锁。
 + 但是在多线程环境中，NSNotificationCenter 的 post 和转发 是在同一个线程中。
 
+#### Runloop 使用的坑
+
+1、UIScrollView 在滚动的过程中，为什么 NSTimer 会暂停？
+
+2、`performSelecter:afterDelay` 使用的过程中，selector 为什么没有被调用？
+
+3、如果使用 Runloop 创建一个常驻线程？
+
+4、如何使用 Runloop 来监听主线程的卡顿？
+
+
+
