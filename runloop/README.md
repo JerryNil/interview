@@ -1,21 +1,34 @@
-## runloop
+## Runloop
 
-#### 说一下runloop和线程的关系
+#### 参考
 
-[](https://blog.ibireme.com/2015/05/18/runloop/)
++ https://blog.ibireme.com/2015/05/18/runloop/
+
++ http://southpeak.github.io/2015/03/14/nsnotification-and-multithreading/
+
+  
+
+#### 说一下 Runloop 和线程的关系
 
 runloop 跟线程的关系是一一对应关系，如果没有线程，runloop也没有存在的必要。主线程的runloop会自动创建，子线程的runloop需要手动创建。
+
+
 
 #### Runloop 有几种 mode
 
 + NSRunLoopDefaultMode，App默认 mode，主线程就是运行在该 mode 下。
+
 + UITrackingRunloopMode，界面跟踪 mode，当滑动 UIScrollView 的时候，defaultMode 就会切换到 UITrackingMode。
+
 + UIInitializationRunloopMode，App 启动的时候获取的第一个 mode，启动完成后不再使用。
+
 + GSEventReceiveRunloopMode，接收系统内部事件，不经常使用。
 
 + kCFRunLoopCommonModes 占位 mode，common 属性，runloop 内容发生变化时，会自动把commonModes 里面的 source、observer、timer 同步到具有 common 属性的 mode 中。
 
-#### Runloop Observer 的状态，runloop 的内部实现？
+  
+
+#### Runloop Observer 的状态，Runloop 的内部实现？
 
 Observer 的状态：
 
@@ -41,7 +54,9 @@ Observer 的状态：
 11、如果有block处理，就处理block。
 12、如果runloop内部没有timer、observer、source就退出runloop
 
-#### RunLoop的作用是什么？它的内部工作机制了解么？（最好结合线程和内存管理来说）（runloop原理）
+
+
+#### RunLoop的作用是什么？它的内部工作机制了解么？（最好结合线程和内存管理来说）（Runloop原理）
 
 内部的本质其实就是一个do-while循环。核心是基于mach port的。
 
@@ -60,7 +75,7 @@ Observer 的状态：
 + 9、通知observer，runloop的线程刚刚被唤醒。
 + 10、通知observer，runloop即将退出。
 
-runloop 相关的应用：
+#### Runloop 有关的内容
 
 1、autorelease 释放相关
 
@@ -96,8 +111,6 @@ runloop 相关的应用：
 AFNetworking 2.x 版本的时候，内部还使用runloop来进行线程保活，因为NSURLConnection 的设计，当发送请求后，必须让线程保活来接收 connection delegate 回调回来的数据，所以设计了使用NSRunloop来进行线程保活。
 
 #### NSNotificationCenter是在哪个线程发送的通知？
-
-http://southpeak.github.io/2015/03/14/nsnotification-and-multithreading/
 
 + 它是一个线程安全类，可以在多线程环境下使用同一个 NSNotificationCenter 对象而不需要加锁。
 + 但是在多线程环境中，NSNotificationCenter 的 post 和转发 是在同一个线程中。
