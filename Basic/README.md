@@ -1,7 +1,8 @@
 #### 为什么一定要在主线程里面更新UI？
 
-#### 你们应用的崩溃率是多少？
 #### 哈希表 Hash Table
+
+> https://juejin.im/post/5b56155e6fb9a04f8b78619b#heading-1
 
 NSDictionary底层实现其实是一个哈希表。哈希表的本质是一个数组，数组的每一个元素是一个箱子，箱子中存放的是键值对。
 
@@ -10,19 +11,17 @@ NSDictionary底层实现其实是一个哈希表。哈希表的本质是一个�
 ```
 哈希表存储过程：
 
-+ 传入 key， 根据哈希函数算出它的哈希值 index。index 必须是整数。
-+ 假设箱子的个数为 n，那么这个键值对应该放在第 index % n 的箱子中。
-+ 哈希函数计算出的 index 相同就会产生哈希冲突，就是用开放寻址法或拉链发解决冲突。
-+ 开放寻址：按照一定规则向其他地址探测，直到遇到空桶。
-+ 再哈希法、拉链法通过链表将所有相同 index 元素串起来。有可能链表转成红黑树。
-+ 如果使用双向链表容易浪费内存，多了一个指针。
+1、传入 key， 根据哈希函数算出它的哈希值 index。index 必须是整数。
+2、假设箱子的个数为 n，那么这个键值对应该放在第 index % n 的箱子中。
+3、哈希函数计算出的 index 相同就会产生哈希冲突，就是用开放寻址法或拉链发解决冲突。
+4、开放寻址：按照一定规则向其他地址探测，直到遇到空桶。
+5、再哈希法、拉链法通过链表将所有相同 index 元素串起来。有可能链表转成红黑树。
+6、如果使用双向链表容易浪费内存，多了一个指针。
 
 使用拉链法解决哈希冲突时，每个箱子其实是一个链表，属于同一个箱子的键值对都会排在链表中。
 
 还有一个负载因子，表示哈希表的空满程度。
 ```
-
-> https://juejin.im/post/5b56155e6fb9a04f8b78619b#heading-1
 
 #### NSDictionary的实现原理是什么？
 
@@ -45,33 +44,37 @@ void swap(int &a, int& b)
 ```
 
 #### iOS 事件传递和响应
-[](http://smnh.me/hit-testing-in-ios/)
+>  http://smnh.me/hit-testing-in-ios/
+>
+> https://stackoverflow.com/questions/4961386/event-handling-for-ios-how-hittestwithevent-and-pointinsidewithevent-are-r/4961484#4961484
+
+
 
 ![](http://d33wubrfki0l68.cloudfront.net/2321d34cb19b0a4dbefa426561c761e10672fcc7/237b8/images/hit-test-flowchart.png)
 
-[](https://stackoverflow.com/questions/4961386/event-handling-for-ios-how-hittestwithevent-and-pointinsidewithevent-are-r/4961484#4961484)
+
 
 iOS 事件流有两条线，事件传递（分发）和事件响应
 
-1、事件传递
+一、事件传递
 
 当用户触摸了设备的屏幕，此时系统会产生一个 UIEvent 被添加到 UIApplication 管理的事件队列，等到下一个 runloop 到来之时添加到 runloop 中。然后从 UIApplication 的事件队列取出事件交由 UIWindow 主窗口开始处理，接下来就是 hitTest 的主要流程。
 
 hitTest：
 
-1、UIWindow 调用 pointInSide:withEvent: 来判断触摸点是否在当前视图上。
-2、如果返回NO，则 hitTest 返回nil。如果返回YES，则向当前视图的子视图发送 hitTest 事件。
-3、子视图从上至下遍历视图，依次判断触摸点是否在当前视图，如果是继续遍历。
-4、如果最底层的子视图有返回非空对象，则hitTest就返回该对象。
-5、如果返回的都是nil，则 hitTest 返回自身。
++ UIWindow 调用 pointInSide:withEvent: 来判断触摸点是否在当前视图上。
++ 如果返回NO，则 hitTest 返回nil。如果返回YES，则向当前视图的子视图发送 hitTest 事件。
++ 子视图从上至下遍历视图，依次判断触摸点是否在当前视图，如果是继续遍历。
++ 如果最底层的子视图有返回非空对象，则hitTest就返回该对象。
++ 如果返回的都是nil，则 hitTest 返回自身。
 
 hitTest 找能响应事件的视图时，有三个限制条件防止hitTest继续往下找。
 
-1、hidden=YES
-2、userInteractionEnabled=NO
-3、alpha<0.01
++ hidden=YES
++ userInteractionEnabled=NO
++ alpha<0.01
 
-2、事件响应
+二、事件响应
 
 事件产生之后由点击的视图首先判断能否处理，如果处理不了就会往视图的父视图进行传递，如果父视图还不能响应继续传递给根视图，如果还不响应传递给控制器，然后传递给主窗口，最后传递给UIApplication，如果还不能处理就直接废弃。
 
@@ -81,22 +84,22 @@ First Responser --> The Window --> The Application --> nil（丢弃）
 
 #### NSCache 和 NSDictionary 的区别
 
-1、NSCache 会在内存紧张的时候自动清除缓存。
-2、NSCache 是线程安全类，可以在多线程情况下不需要使用锁就可以添加和删除操作。
-3、NSDictionary 的 key 是遵循 NSCopying 协议的。
++ NSCache 会在内存紧张的时候自动清除缓存。
++ NSCache 是线程安全类，可以在多线程情况下不需要使用锁就可以添加和删除操作。
++ NSDictionary 的 key 是遵循 NSCopying 协议的。
 
 #### synthesize 和 dynamic 分别有什么作用
 
 property 有两个对应的词，一个是 synthesize，一个是 dynamic。
 
-1、synthesize 是自动合成，编译器会自动为我们合成属性、存取方法。
-2、dynamic 是告诉编译器，属性方法由自己实现，不需要自动合成。
-3、dynamic 在使用的时候，需要注意的是没有实现属性方法，程序去调用的时候会crash。
++ synthesize 是自动合成，编译器会自动为我们合成属性、存取方法。
++ dynamic 是告诉编译器，属性方法由自己实现，不需要自动合成。
++ dynamic 在使用的时候，需要注意的是没有实现属性方法，程序去调用的时候会crash。
 
 #### 默认关键字
 
-1、常量类型： atomic、readwrite、assign
-2、对象类型：atomic、readwrite、strong
++ 常量类型： atomic、readwrite、assign
++ 对象类型：atomic、readwrite、strong
 
 #### 使用copy关键字声明属性，为什么？
 
@@ -134,19 +137,19 @@ property 有两个对应的词，一个是 synthesize，一个是 dynamic。
     如果子类重载了父类的属性，必须使用@synthesize进行手动合成ivar。
 
 #### 在 protocol 和 category 中如何使用property
-    
+
     只会生成 setter 和 getter 方法声明。
     
     1、protocol 声明的属性，遵循该协议的类属性重写或者通过 @syncthesize 来自动合成。
     2、category 声明的属性，需要使用associate object来关联对象。
-    
+
 #### 常见的Exception
 
-1、SIGSEGV 重复释放对象
-2、SIGABRT 收到abort信号，插入nil到数组中会遇到此类错误
-3、SEGV 代表无效指针，比如空指针
-4、SIGBUS 总线错误，地址对齐问题
-5、SIGILL 尝试非法指令
++ SIGSEGV 重复释放对象
++ SIGABRT 收到abort信号，插入nil到数组中会遇到此类错误
++ SEGV 代表无效指针，比如空指针
++ SIGBUS 总线错误，地址对齐问题
++ SIGILL 尝试非法指令
 
 #### Autolayout
 

@@ -17,46 +17,23 @@ runloop 跟线程的关系是一一对应关系，如果没有线程，runloop�
 #### Runloop 有几种 mode
 
 + NSRunLoopDefaultMode，App默认 mode，主线程就是运行在该 mode 下。
-
 + UITrackingRunloopMode，界面跟踪 mode，当滑动 UIScrollView 的时候，defaultMode 就会切换到 UITrackingMode。
-
 + UIInitializationRunloopMode，App 启动的时候获取的第一个 mode，启动完成后不再使用。
-
 + GSEventReceiveRunloopMode，接收系统内部事件，不经常使用。
-
 + kCFRunLoopCommonModes 占位 mode，common 属性，runloop 内容发生变化时，会自动把commonModes 里面的 source、observer、timer 同步到具有 common 属性的 mode 中。
-
-  
 
 #### Runloop Observer 的状态，Runloop 的内部实现？
 
 Observer 的状态：
 
-1、entry
-2、beforeTimer
-3、beforeSource
-4、beforeWaiting
-5、AfterWaiting
-6、exit
++ entry
++ beforeTimer
++ beforeSource
++ beforeWaiting
++ AfterWaiting
++ exit
 
-内部实现
-
-1、首先判断 runloop 内部有没有timer、source、observer，没有就直接退出
-2、通知 observer，即将进入loop
-3、通知 observer，即将触发timer
-4、通知 observer 即将触发 Source0 (非port) 回调。
-5、处理 source0回调
-6、判断是否有source1，如果存在直接去处理消息，处理完消息调回到第三步通知observer timer，即将触发timer。
-7、通知 observer，即将进入休眠
-8、休眠中，等待外部唤醒
-9、通知observer，runloop刚被唤醒
-10、如果timer事件到了，处理timer
-11、如果有block处理，就处理block。
-12、如果runloop内部没有timer、observer、source就退出runloop
-
-
-
-#### RunLoop的作用是什么？它的内部工作机制了解么？（最好结合线程和内存管理来说）（Runloop原理）
+#### RunLoop的作用是什么？它的内部工作机制了解么？（最好结合线程和内存管理来说）
 
 内部的本质其实就是一个do-while循环。核心是基于mach port的。
 
@@ -64,7 +41,7 @@ Observer 的状态：
 + 2、通知observer，runloop即将进入loop、
 + 3、通知observer，runloop即将触发timer回调。
 + 4、通知observer，runloop即将触发source0回调。
-+ 5、出发source0回调
++ 5、触发source0回调
 + 6、如果有source1，直接处理这个source1，然后跳转去处理消息。
 + 7、通知observer，runloop即将进入休眠。
 + 8、线程即将进入休眠，直到被下面某个事件唤醒。

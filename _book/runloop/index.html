@@ -60,7 +60,7 @@
     <link rel="next" href="../design/" />
     
     
-    <link rel="prev" href="../Runtime/category/" />
+    <link rel="prev" href="../Runtime/category.html" />
     
 
     </head>
@@ -165,7 +165,7 @@
                 <a href="../Basic/">
             
                     
-                    基础支持
+                    Foudation
             
                 </a>
             
@@ -187,9 +187,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.4.1" data-path="../Runtime/category/">
+        <li class="chapter " data-level="1.4.1" data-path="../Runtime/category.html">
             
-                <a href="../Runtime/category/">
+                <a href="../Runtime/category.html">
             
                     
                     分类
@@ -270,6 +270,45 @@
             
         </li>
     
+        <li class="chapter " data-level="1.10" data-path="../system/">
+            
+                <a href="../system/">
+            
+                    
+                    系统原理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="../performance/">
+            
+                <a href="../performance/">
+            
+                    
+                    性能优化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="../apply/">
+            
+                <a href="../apply/">
+            
+                    
+                    实际应用
+            
+                </a>
+            
+
+            
+        </li>
+    
 
     
 
@@ -327,46 +366,30 @@
 <p>runloop &#x8DDF;&#x7EBF;&#x7A0B;&#x7684;&#x5173;&#x7CFB;&#x662F;&#x4E00;&#x4E00;&#x5BF9;&#x5E94;&#x5173;&#x7CFB;&#xFF0C;&#x5982;&#x679C;&#x6CA1;&#x6709;&#x7EBF;&#x7A0B;&#xFF0C;runloop&#x4E5F;&#x6CA1;&#x6709;&#x5B58;&#x5728;&#x7684;&#x5FC5;&#x8981;&#x3002;&#x4E3B;&#x7EBF;&#x7A0B;&#x7684;runloop&#x4F1A;&#x81EA;&#x52A8;&#x521B;&#x5EFA;&#xFF0C;&#x5B50;&#x7EBF;&#x7A0B;&#x7684;runloop&#x9700;&#x8981;&#x624B;&#x52A8;&#x521B;&#x5EFA;&#x3002;</p>
 <h4 id="runloop-&#x6709;&#x51E0;&#x79CD;-mode">Runloop &#x6709;&#x51E0;&#x79CD; mode</h4>
 <ul>
-<li><p>NSRunLoopDefaultMode&#xFF0C;App&#x9ED8;&#x8BA4; mode&#xFF0C;&#x4E3B;&#x7EBF;&#x7A0B;&#x5C31;&#x662F;&#x8FD0;&#x884C;&#x5728;&#x8BE5; mode &#x4E0B;&#x3002;</p>
-</li>
-<li><p>UITrackingRunloopMode&#xFF0C;&#x754C;&#x9762;&#x8DDF;&#x8E2A; mode&#xFF0C;&#x5F53;&#x6ED1;&#x52A8; UIScrollView &#x7684;&#x65F6;&#x5019;&#xFF0C;defaultMode &#x5C31;&#x4F1A;&#x5207;&#x6362;&#x5230; UITrackingMode&#x3002;</p>
-</li>
-<li><p>UIInitializationRunloopMode&#xFF0C;App &#x542F;&#x52A8;&#x7684;&#x65F6;&#x5019;&#x83B7;&#x53D6;&#x7684;&#x7B2C;&#x4E00;&#x4E2A; mode&#xFF0C;&#x542F;&#x52A8;&#x5B8C;&#x6210;&#x540E;&#x4E0D;&#x518D;&#x4F7F;&#x7528;&#x3002;</p>
-</li>
-<li><p>GSEventReceiveRunloopMode&#xFF0C;&#x63A5;&#x6536;&#x7CFB;&#x7EDF;&#x5185;&#x90E8;&#x4E8B;&#x4EF6;&#xFF0C;&#x4E0D;&#x7ECF;&#x5E38;&#x4F7F;&#x7528;&#x3002;</p>
-</li>
-<li><p>kCFRunLoopCommonModes &#x5360;&#x4F4D; mode&#xFF0C;common &#x5C5E;&#x6027;&#xFF0C;runloop &#x5185;&#x5BB9;&#x53D1;&#x751F;&#x53D8;&#x5316;&#x65F6;&#xFF0C;&#x4F1A;&#x81EA;&#x52A8;&#x628A;commonModes &#x91CC;&#x9762;&#x7684; source&#x3001;observer&#x3001;timer &#x540C;&#x6B65;&#x5230;&#x5177;&#x6709; common &#x5C5E;&#x6027;&#x7684; mode &#x4E2D;&#x3002;</p>
-</li>
+<li>NSRunLoopDefaultMode&#xFF0C;App&#x9ED8;&#x8BA4; mode&#xFF0C;&#x4E3B;&#x7EBF;&#x7A0B;&#x5C31;&#x662F;&#x8FD0;&#x884C;&#x5728;&#x8BE5; mode &#x4E0B;&#x3002;</li>
+<li>UITrackingRunloopMode&#xFF0C;&#x754C;&#x9762;&#x8DDF;&#x8E2A; mode&#xFF0C;&#x5F53;&#x6ED1;&#x52A8; UIScrollView &#x7684;&#x65F6;&#x5019;&#xFF0C;defaultMode &#x5C31;&#x4F1A;&#x5207;&#x6362;&#x5230; UITrackingMode&#x3002;</li>
+<li>UIInitializationRunloopMode&#xFF0C;App &#x542F;&#x52A8;&#x7684;&#x65F6;&#x5019;&#x83B7;&#x53D6;&#x7684;&#x7B2C;&#x4E00;&#x4E2A; mode&#xFF0C;&#x542F;&#x52A8;&#x5B8C;&#x6210;&#x540E;&#x4E0D;&#x518D;&#x4F7F;&#x7528;&#x3002;</li>
+<li>GSEventReceiveRunloopMode&#xFF0C;&#x63A5;&#x6536;&#x7CFB;&#x7EDF;&#x5185;&#x90E8;&#x4E8B;&#x4EF6;&#xFF0C;&#x4E0D;&#x7ECF;&#x5E38;&#x4F7F;&#x7528;&#x3002;</li>
+<li>kCFRunLoopCommonModes &#x5360;&#x4F4D; mode&#xFF0C;common &#x5C5E;&#x6027;&#xFF0C;runloop &#x5185;&#x5BB9;&#x53D1;&#x751F;&#x53D8;&#x5316;&#x65F6;&#xFF0C;&#x4F1A;&#x81EA;&#x52A8;&#x628A;commonModes &#x91CC;&#x9762;&#x7684; source&#x3001;observer&#x3001;timer &#x540C;&#x6B65;&#x5230;&#x5177;&#x6709; common &#x5C5E;&#x6027;&#x7684; mode &#x4E2D;&#x3002;</li>
 </ul>
 <h4 id="runloop-observer-&#x7684;&#x72B6;&#x6001;&#xFF0C;runloop-&#x7684;&#x5185;&#x90E8;&#x5B9E;&#x73B0;&#xFF1F;">Runloop Observer &#x7684;&#x72B6;&#x6001;&#xFF0C;Runloop &#x7684;&#x5185;&#x90E8;&#x5B9E;&#x73B0;&#xFF1F;</h4>
 <p>Observer &#x7684;&#x72B6;&#x6001;&#xFF1A;</p>
-<p>1&#x3001;entry
-2&#x3001;beforeTimer
-3&#x3001;beforeSource
-4&#x3001;beforeWaiting
-5&#x3001;AfterWaiting
-6&#x3001;exit</p>
-<p>&#x5185;&#x90E8;&#x5B9E;&#x73B0;</p>
-<p>1&#x3001;&#x9996;&#x5148;&#x5224;&#x65AD; runloop &#x5185;&#x90E8;&#x6709;&#x6CA1;&#x6709;timer&#x3001;source&#x3001;observer&#xFF0C;&#x6CA1;&#x6709;&#x5C31;&#x76F4;&#x63A5;&#x9000;&#x51FA;
-2&#x3001;&#x901A;&#x77E5; observer&#xFF0C;&#x5373;&#x5C06;&#x8FDB;&#x5165;loop
-3&#x3001;&#x901A;&#x77E5; observer&#xFF0C;&#x5373;&#x5C06;&#x89E6;&#x53D1;timer
-4&#x3001;&#x901A;&#x77E5; observer &#x5373;&#x5C06;&#x89E6;&#x53D1; Source0 (&#x975E;port) &#x56DE;&#x8C03;&#x3002;
-5&#x3001;&#x5904;&#x7406; source0&#x56DE;&#x8C03;
-6&#x3001;&#x5224;&#x65AD;&#x662F;&#x5426;&#x6709;source1&#xFF0C;&#x5982;&#x679C;&#x5B58;&#x5728;&#x76F4;&#x63A5;&#x53BB;&#x5904;&#x7406;&#x6D88;&#x606F;&#xFF0C;&#x5904;&#x7406;&#x5B8C;&#x6D88;&#x606F;&#x8C03;&#x56DE;&#x5230;&#x7B2C;&#x4E09;&#x6B65;&#x901A;&#x77E5;observer timer&#xFF0C;&#x5373;&#x5C06;&#x89E6;&#x53D1;timer&#x3002;
-7&#x3001;&#x901A;&#x77E5; observer&#xFF0C;&#x5373;&#x5C06;&#x8FDB;&#x5165;&#x4F11;&#x7720;
-8&#x3001;&#x4F11;&#x7720;&#x4E2D;&#xFF0C;&#x7B49;&#x5F85;&#x5916;&#x90E8;&#x5524;&#x9192;
-9&#x3001;&#x901A;&#x77E5;observer&#xFF0C;runloop&#x521A;&#x88AB;&#x5524;&#x9192;
-10&#x3001;&#x5982;&#x679C;timer&#x4E8B;&#x4EF6;&#x5230;&#x4E86;&#xFF0C;&#x5904;&#x7406;timer
-11&#x3001;&#x5982;&#x679C;&#x6709;block&#x5904;&#x7406;&#xFF0C;&#x5C31;&#x5904;&#x7406;block&#x3002;
-12&#x3001;&#x5982;&#x679C;runloop&#x5185;&#x90E8;&#x6CA1;&#x6709;timer&#x3001;observer&#x3001;source&#x5C31;&#x9000;&#x51FA;runloop</p>
-<h4 id="runloop&#x7684;&#x4F5C;&#x7528;&#x662F;&#x4EC0;&#x4E48;&#xFF1F;&#x5B83;&#x7684;&#x5185;&#x90E8;&#x5DE5;&#x4F5C;&#x673A;&#x5236;&#x4E86;&#x89E3;&#x4E48;&#xFF1F;&#xFF08;&#x6700;&#x597D;&#x7ED3;&#x5408;&#x7EBF;&#x7A0B;&#x548C;&#x5185;&#x5B58;&#x7BA1;&#x7406;&#x6765;&#x8BF4;&#xFF09;&#xFF08;runloop&#x539F;&#x7406;&#xFF09;">RunLoop&#x7684;&#x4F5C;&#x7528;&#x662F;&#x4EC0;&#x4E48;&#xFF1F;&#x5B83;&#x7684;&#x5185;&#x90E8;&#x5DE5;&#x4F5C;&#x673A;&#x5236;&#x4E86;&#x89E3;&#x4E48;&#xFF1F;&#xFF08;&#x6700;&#x597D;&#x7ED3;&#x5408;&#x7EBF;&#x7A0B;&#x548C;&#x5185;&#x5B58;&#x7BA1;&#x7406;&#x6765;&#x8BF4;&#xFF09;&#xFF08;Runloop&#x539F;&#x7406;&#xFF09;</h4>
+<ul>
+<li>entry</li>
+<li>beforeTimer</li>
+<li>beforeSource</li>
+<li>beforeWaiting</li>
+<li>AfterWaiting</li>
+<li>exit</li>
+</ul>
+<h4 id="runloop&#x7684;&#x4F5C;&#x7528;&#x662F;&#x4EC0;&#x4E48;&#xFF1F;&#x5B83;&#x7684;&#x5185;&#x90E8;&#x5DE5;&#x4F5C;&#x673A;&#x5236;&#x4E86;&#x89E3;&#x4E48;&#xFF1F;&#xFF08;&#x6700;&#x597D;&#x7ED3;&#x5408;&#x7EBF;&#x7A0B;&#x548C;&#x5185;&#x5B58;&#x7BA1;&#x7406;&#x6765;&#x8BF4;&#xFF09;">RunLoop&#x7684;&#x4F5C;&#x7528;&#x662F;&#x4EC0;&#x4E48;&#xFF1F;&#x5B83;&#x7684;&#x5185;&#x90E8;&#x5DE5;&#x4F5C;&#x673A;&#x5236;&#x4E86;&#x89E3;&#x4E48;&#xFF1F;&#xFF08;&#x6700;&#x597D;&#x7ED3;&#x5408;&#x7EBF;&#x7A0B;&#x548C;&#x5185;&#x5B58;&#x7BA1;&#x7406;&#x6765;&#x8BF4;&#xFF09;</h4>
 <p>&#x5185;&#x90E8;&#x7684;&#x672C;&#x8D28;&#x5176;&#x5B9E;&#x5C31;&#x662F;&#x4E00;&#x4E2A;do-while&#x5FAA;&#x73AF;&#x3002;&#x6838;&#x5FC3;&#x662F;&#x57FA;&#x4E8E;mach port&#x7684;&#x3002;</p>
 <ul>
 <li>1&#x3001;&#x9996;&#x5148;&#x6839;&#x636E;modeName&#x627E;&#x5230;&#x5BF9;&#x5E94;&#x7684;mode&#xFF0C;&#x5982;&#x679C;mode&#x4E2D;&#x6CA1;&#x6709;source&#x3001;timer&#x3001;observer&#xFF0C;&#x4F1A;&#x76F4;&#x63A5;&#x8FD4;&#x56DE;&#x3002;</li>
 <li>2&#x3001;&#x901A;&#x77E5;observer&#xFF0C;runloop&#x5373;&#x5C06;&#x8FDB;&#x5165;loop&#x3001;</li>
 <li>3&#x3001;&#x901A;&#x77E5;observer&#xFF0C;runloop&#x5373;&#x5C06;&#x89E6;&#x53D1;timer&#x56DE;&#x8C03;&#x3002;</li>
 <li>4&#x3001;&#x901A;&#x77E5;observer&#xFF0C;runloop&#x5373;&#x5C06;&#x89E6;&#x53D1;source0&#x56DE;&#x8C03;&#x3002;</li>
-<li>5&#x3001;&#x51FA;&#x53D1;source0&#x56DE;&#x8C03;</li>
+<li>5&#x3001;&#x89E6;&#x53D1;source0&#x56DE;&#x8C03;</li>
 <li>6&#x3001;&#x5982;&#x679C;&#x6709;source1&#xFF0C;&#x76F4;&#x63A5;&#x5904;&#x7406;&#x8FD9;&#x4E2A;source1&#xFF0C;&#x7136;&#x540E;&#x8DF3;&#x8F6C;&#x53BB;&#x5904;&#x7406;&#x6D88;&#x606F;&#x3002;</li>
 <li>7&#x3001;&#x901A;&#x77E5;observer&#xFF0C;runloop&#x5373;&#x5C06;&#x8FDB;&#x5165;&#x4F11;&#x7720;&#x3002;</li>
 <li>8&#x3001;&#x7EBF;&#x7A0B;&#x5373;&#x5C06;&#x8FDB;&#x5165;&#x4F11;&#x7720;&#xFF0C;&#x76F4;&#x5230;&#x88AB;&#x4E0B;&#x9762;&#x67D0;&#x4E2A;&#x4E8B;&#x4EF6;&#x5524;&#x9192;&#x3002;<ul>
@@ -437,7 +460,7 @@
 
             
                 
-                <a href="../Runtime/category/" class="navigation navigation-prev " aria-label="Previous page: 分类">
+                <a href="../Runtime/category.html" class="navigation navigation-prev " aria-label="Previous page: 分类">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
@@ -453,7 +476,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Runloop","level":"1.5","depth":1,"next":{"title":"设计模式","level":"1.6","depth":1,"path":"design/README.md","ref":"design/README.md","articles":[]},"previous":{"title":"分类","level":"1.4.1","depth":2,"path":"Runtime/category/README.md","ref":"Runtime/category/README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"runloop/README.md","mtime":"2020-01-04T11:56:14.436Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-01-04T12:31:02.702Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Runloop","level":"1.5","depth":1,"next":{"title":"设计模式","level":"1.6","depth":1,"path":"design/README.md","ref":"design/README.md","articles":[]},"previous":{"title":"分类","level":"1.4.1","depth":2,"path":"Runtime/category.md","ref":"Runtime/category.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"runloop/README.md","mtime":"2020-01-04T12:58:07.836Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-01-04T13:06:01.861Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
