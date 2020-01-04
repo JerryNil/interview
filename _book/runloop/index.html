@@ -1,0 +1,424 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Runloop · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../design/" />
+    
+    
+    <link rel="prev" href="../Runtime/" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    前言
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../MemoryManager/">
+            
+                <a href="../MemoryManager/">
+            
+                    
+                    内存管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../Basic/">
+            
+                <a href="../Basic/">
+            
+                    
+                    基础支持
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../Runtime/">
+            
+                <a href="../Runtime/">
+            
+                    
+                    Runtime
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.5" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Runloop
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../design/">
+            
+                <a href="../design/">
+            
+                    
+                    设计模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../network/">
+            
+                <a href="../network/">
+            
+                    
+                    网络题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../multiThread/">
+            
+                <a href="../multiThread/">
+            
+                    
+                    多线程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../datastruct/">
+            
+                <a href="../datastruct/">
+            
+                    
+                    数据结构
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Runloop</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h2 id="runloop">runloop</h2>
+<h4 id="&#x8BF4;&#x4E00;&#x4E0B;runloop&#x548C;&#x7EBF;&#x7A0B;&#x7684;&#x5173;&#x7CFB;">&#x8BF4;&#x4E00;&#x4E0B;runloop&#x548C;&#x7EBF;&#x7A0B;&#x7684;&#x5173;&#x7CFB;</h4>
+<p><a href="https://blog.ibireme.com/2015/05/18/runloop/" target="_blank"></a></p>
+<p>runloop &#x8DDF;&#x7EBF;&#x7A0B;&#x7684;&#x5173;&#x7CFB;&#x662F;&#x4E00;&#x4E00;&#x5BF9;&#x5E94;&#x5173;&#x7CFB;&#xFF0C;&#x5982;&#x679C;&#x6CA1;&#x6709;&#x7EBF;&#x7A0B;&#xFF0C;runloop&#x4E5F;&#x6CA1;&#x6709;&#x5B58;&#x5728;&#x7684;&#x5FC5;&#x8981;&#x3002;&#x4E3B;&#x7EBF;&#x7A0B;&#x7684;runloop&#x4F1A;&#x81EA;&#x52A8;&#x521B;&#x5EFA;&#xFF0C;&#x5B50;&#x7EBF;&#x7A0B;&#x7684;runloop&#x9700;&#x8981;&#x624B;&#x52A8;&#x521B;&#x5EFA;&#x3002;</p>
+<h4 id="runloop-&#x6709;&#x51E0;&#x79CD;-mode">Runloop &#x6709;&#x51E0;&#x79CD; mode</h4>
+<ul>
+<li>NSRunLoopDefaultMode&#xFF0C;App&#x9ED8;&#x8BA4; mode&#xFF0C;&#x4E3B;&#x7EBF;&#x7A0B;&#x5C31;&#x662F;&#x8FD0;&#x884C;&#x5728;&#x8BE5; mode &#x4E0B;&#x3002;</li>
+<li>UITrackingRunloopMode&#xFF0C;&#x754C;&#x9762;&#x8DDF;&#x8E2A; mode&#xFF0C;&#x5F53;&#x6ED1;&#x52A8; UIScrollView &#x7684;&#x65F6;&#x5019;&#xFF0C;defaultMode &#x5C31;&#x4F1A;&#x5207;&#x6362;&#x5230; UITrackingMode&#x3002;</li>
+<li>UIInitializationRunloopMode&#xFF0C;App &#x542F;&#x52A8;&#x7684;&#x65F6;&#x5019;&#x83B7;&#x53D6;&#x7684;&#x7B2C;&#x4E00;&#x4E2A; mode&#xFF0C;&#x542F;&#x52A8;&#x5B8C;&#x6210;&#x540E;&#x4E0D;&#x518D;&#x4F7F;&#x7528;&#x3002;</li>
+<li><p>GSEventReceiveRunloopMode&#xFF0C;&#x63A5;&#x6536;&#x7CFB;&#x7EDF;&#x5185;&#x90E8;&#x4E8B;&#x4EF6;&#xFF0C;&#x4E0D;&#x7ECF;&#x5E38;&#x4F7F;&#x7528;&#x3002;</p>
+</li>
+<li><p>kCFRunLoopCommonModes &#x5360;&#x4F4D; mode&#xFF0C;common &#x5C5E;&#x6027;&#xFF0C;runloop &#x5185;&#x5BB9;&#x53D1;&#x751F;&#x53D8;&#x5316;&#x65F6;&#xFF0C;&#x4F1A;&#x81EA;&#x52A8;&#x628A;commonModes &#x91CC;&#x9762;&#x7684; source&#x3001;observer&#x3001;timer &#x540C;&#x6B65;&#x5230;&#x5177;&#x6709; common &#x5C5E;&#x6027;&#x7684; mode &#x4E2D;&#x3002;</p>
+</li>
+</ul>
+<h4 id="runloop-observer-&#x7684;&#x72B6;&#x6001;&#xFF0C;runloop-&#x7684;&#x5185;&#x90E8;&#x5B9E;&#x73B0;&#xFF1F;">Runloop Observer &#x7684;&#x72B6;&#x6001;&#xFF0C;runloop &#x7684;&#x5185;&#x90E8;&#x5B9E;&#x73B0;&#xFF1F;</h4>
+<p>Observer &#x7684;&#x72B6;&#x6001;&#xFF1A;</p>
+<p>1&#x3001;entry
+2&#x3001;beforeTimer
+3&#x3001;beforeSource
+4&#x3001;beforeWaiting
+5&#x3001;AfterWaiting
+6&#x3001;exit</p>
+<p>&#x5185;&#x90E8;&#x5B9E;&#x73B0;</p>
+<p>1&#x3001;&#x9996;&#x5148;&#x5224;&#x65AD; runloop &#x5185;&#x90E8;&#x6709;&#x6CA1;&#x6709;timer&#x3001;source&#x3001;observer&#xFF0C;&#x6CA1;&#x6709;&#x5C31;&#x76F4;&#x63A5;&#x9000;&#x51FA;
+2&#x3001;&#x901A;&#x77E5; observer&#xFF0C;&#x5373;&#x5C06;&#x8FDB;&#x5165;loop
+3&#x3001;&#x901A;&#x77E5; observer&#xFF0C;&#x5373;&#x5C06;&#x89E6;&#x53D1;timer
+4&#x3001;&#x901A;&#x77E5; observer &#x5373;&#x5C06;&#x89E6;&#x53D1; Source0 (&#x975E;port) &#x56DE;&#x8C03;&#x3002;
+5&#x3001;&#x5904;&#x7406; source0&#x56DE;&#x8C03;
+6&#x3001;&#x5224;&#x65AD;&#x662F;&#x5426;&#x6709;source1&#xFF0C;&#x5982;&#x679C;&#x5B58;&#x5728;&#x76F4;&#x63A5;&#x53BB;&#x5904;&#x7406;&#x6D88;&#x606F;&#xFF0C;&#x5904;&#x7406;&#x5B8C;&#x6D88;&#x606F;&#x8C03;&#x56DE;&#x5230;&#x7B2C;&#x4E09;&#x6B65;&#x901A;&#x77E5;observer timer&#xFF0C;&#x5373;&#x5C06;&#x89E6;&#x53D1;timer&#x3002;
+7&#x3001;&#x901A;&#x77E5; observer&#xFF0C;&#x5373;&#x5C06;&#x8FDB;&#x5165;&#x4F11;&#x7720;
+8&#x3001;&#x4F11;&#x7720;&#x4E2D;&#xFF0C;&#x7B49;&#x5F85;&#x5916;&#x90E8;&#x5524;&#x9192;
+9&#x3001;&#x901A;&#x77E5;observer&#xFF0C;runloop&#x521A;&#x88AB;&#x5524;&#x9192;
+10&#x3001;&#x5982;&#x679C;timer&#x4E8B;&#x4EF6;&#x5230;&#x4E86;&#xFF0C;&#x5904;&#x7406;timer
+11&#x3001;&#x5982;&#x679C;&#x6709;block&#x5904;&#x7406;&#xFF0C;&#x5C31;&#x5904;&#x7406;block&#x3002;
+12&#x3001;&#x5982;&#x679C;runloop&#x5185;&#x90E8;&#x6CA1;&#x6709;timer&#x3001;observer&#x3001;source&#x5C31;&#x9000;&#x51FA;runloop</p>
+<h4 id="runloop&#x7684;&#x4F5C;&#x7528;&#x662F;&#x4EC0;&#x4E48;&#xFF1F;&#x5B83;&#x7684;&#x5185;&#x90E8;&#x5DE5;&#x4F5C;&#x673A;&#x5236;&#x4E86;&#x89E3;&#x4E48;&#xFF1F;&#xFF08;&#x6700;&#x597D;&#x7ED3;&#x5408;&#x7EBF;&#x7A0B;&#x548C;&#x5185;&#x5B58;&#x7BA1;&#x7406;&#x6765;&#x8BF4;&#xFF09;&#xFF08;runloop&#x539F;&#x7406;&#xFF09;">RunLoop&#x7684;&#x4F5C;&#x7528;&#x662F;&#x4EC0;&#x4E48;&#xFF1F;&#x5B83;&#x7684;&#x5185;&#x90E8;&#x5DE5;&#x4F5C;&#x673A;&#x5236;&#x4E86;&#x89E3;&#x4E48;&#xFF1F;&#xFF08;&#x6700;&#x597D;&#x7ED3;&#x5408;&#x7EBF;&#x7A0B;&#x548C;&#x5185;&#x5B58;&#x7BA1;&#x7406;&#x6765;&#x8BF4;&#xFF09;&#xFF08;runloop&#x539F;&#x7406;&#xFF09;</h4>
+<p>&#x5185;&#x90E8;&#x7684;&#x672C;&#x8D28;&#x5176;&#x5B9E;&#x5C31;&#x662F;&#x4E00;&#x4E2A;do-while&#x5FAA;&#x73AF;&#x3002;&#x6838;&#x5FC3;&#x662F;&#x57FA;&#x4E8E;mach port&#x7684;&#x3002;</p>
+<ul>
+<li>1&#x3001;&#x9996;&#x5148;&#x6839;&#x636E;modeName&#x627E;&#x5230;&#x5BF9;&#x5E94;&#x7684;mode&#xFF0C;&#x5982;&#x679C;mode&#x4E2D;&#x6CA1;&#x6709;source&#x3001;timer&#x3001;observer&#xFF0C;&#x4F1A;&#x76F4;&#x63A5;&#x8FD4;&#x56DE;&#x3002;</li>
+<li>2&#x3001;&#x901A;&#x77E5;observer&#xFF0C;runloop&#x5373;&#x5C06;&#x8FDB;&#x5165;loop&#x3001;</li>
+<li>3&#x3001;&#x901A;&#x77E5;observer&#xFF0C;runloop&#x5373;&#x5C06;&#x89E6;&#x53D1;timer&#x56DE;&#x8C03;&#x3002;</li>
+<li>4&#x3001;&#x901A;&#x77E5;observer&#xFF0C;runloop&#x5373;&#x5C06;&#x89E6;&#x53D1;source0&#x56DE;&#x8C03;&#x3002;</li>
+<li>5&#x3001;&#x51FA;&#x53D1;source0&#x56DE;&#x8C03;</li>
+<li>6&#x3001;&#x5982;&#x679C;&#x6709;source1&#xFF0C;&#x76F4;&#x63A5;&#x5904;&#x7406;&#x8FD9;&#x4E2A;source1&#xFF0C;&#x7136;&#x540E;&#x8DF3;&#x8F6C;&#x53BB;&#x5904;&#x7406;&#x6D88;&#x606F;&#x3002;</li>
+<li>7&#x3001;&#x901A;&#x77E5;observer&#xFF0C;runloop&#x5373;&#x5C06;&#x8FDB;&#x5165;&#x4F11;&#x7720;&#x3002;</li>
+<li>8&#x3001;&#x7EBF;&#x7A0B;&#x5373;&#x5C06;&#x8FDB;&#x5165;&#x4F11;&#x7720;&#xFF0C;&#x76F4;&#x5230;&#x88AB;&#x4E0B;&#x9762;&#x67D0;&#x4E2A;&#x4E8B;&#x4EF6;&#x5524;&#x9192;&#x3002;<ul>
+<li>&#x4E00;&#x4E2A;&#x57FA;&#x4E8E;port&#x7684;source&#x4E8B;&#x4EF6;&#x3002;</li>
+<li>&#x4E00;&#x4E2A;timer&#x65F6;&#x95F4;&#x5230;&#x4E86;</li>
+<li>runloop&#x81EA;&#x8EAB;&#x8D85;&#x65F6;&#x65F6;&#x95F4;&#x5230;&#x4E86;</li>
+<li>&#x88AB;&#x5176;&#x4ED6;&#x8C03;&#x7528;&#x8005;&#x624B;&#x52A8;&#x5524;&#x9192;&#x3002;</li>
+</ul>
+</li>
+<li>9&#x3001;&#x901A;&#x77E5;observer&#xFF0C;runloop&#x7684;&#x7EBF;&#x7A0B;&#x521A;&#x521A;&#x88AB;&#x5524;&#x9192;&#x3002;</li>
+<li>10&#x3001;&#x901A;&#x77E5;observer&#xFF0C;runloop&#x5373;&#x5C06;&#x9000;&#x51FA;&#x3002;</li>
+</ul>
+<p>runloop &#x76F8;&#x5173;&#x7684;&#x5E94;&#x7528;&#xFF1A;</p>
+<p>autorelease &#x91CA;&#x653E;&#x76F8;&#x5173;</p>
+<ul>
+<li>APP&#x542F;&#x52A8;&#x540E;&#xFF0C;apple&#x4F1A;&#x5728;&#x4E3B;&#x7EBF;&#x7A0B;&#x6CE8;&#x518C;&#x4E24;&#x4E2A;observer&#xFF0C;&#x7B2C;&#x4E00;&#x4E2A;observer&#x76D1;&#x542C;&#x7684;&#x4E8B;&#x4EF6;&#x662F;entry&#xFF0C;&#x5176;&#x56DE;&#x8C03;&#x4F1A;&#x8C03;&#x7528;<code>_objc_autoreleasePoolPush()</code>&#x521B;&#x5EFA;&#x81EA;&#x52A8;&#x91CA;&#x653E;&#x6C60;&#xFF0C;&#x4F18;&#x5148;&#x7EA7;&#x6700;&#x9AD8;&#xFF0C;&#x4FDD;&#x8BC1;&#x5728;&#x6240;&#x6709;&#x56DE;&#x8C03;&#x4E4B;&#x524D;&#x3002;</li>
+<li>&#x7B2C;&#x4E8C;&#x4E2A;observer&#x76D1;&#x542C;&#x4E24;&#x4E2A;&#x4E8B;&#x4EF6;&#xFF0C;beforeWaiting&#x65F6;&#x8C03;&#x7528;_objc_autoreleasePoolPop() &#x548C; _objc_autoreleasePoolPush() &#x91CA;&#x653E;&#x65E7;&#x7684;&#x6C60;&#x5E76;&#x521B;&#x5EFA;&#x65B0;&#x6C60;&#x3002;exit &#x65F6;&#x8C03;&#x7528; _objc_autoreleasePoolPop() &#x6765;&#x91CA;&#x653E;&#x81EA;&#x52A8;&#x91CA;&#x653E;&#x6C60;&#xFF0C;&#x8FD9;&#x4E2A;&#x4F18;&#x5148;&#x7EA7;&#x6700;&#x4F4E;&#xFF0C;&#x4FDD;&#x8BC1;&#x6240;&#x6709;&#x56DE;&#x8C03;&#x4E4B;&#x540E;&#x3002;</li>
+</ul>
+<p>&#x5173;&#x4E8E;&#x4E8B;&#x4EF6;&#x54CD;&#x5E94; </p>
+<ul>
+<li>apple &#x4F1A;&#x6CE8;&#x518C;&#x4E00;&#x4E2A; source1 &#x7528;&#x6765;&#x63A5;&#x6536;&#x7CFB;&#x7EDF;&#x4E8B;&#x4EF6;&#xFF0C;&#x5982;&#x679C;&#x6709;&#x4E8B;&#x4EF6;&#x53D1;&#x751F;&#xFF0C;&#x5C31;&#x4F1A;&#x89E6;&#x53D1;source1&#x7684;&#x56DE;&#x8C03;&#x51FD;&#x6570;&#xFF0C;&#x88AB;&#x4E8B;&#x4EF6;&#x5C01;&#x88C5;&#x6210;UIEvent&#x8FDB;&#x884C;&#x5206;&#x53D1;&#xFF0C;&#x5305;&#x62EC;&#x624B;&#x52BF;&#x8BC6;&#x522B;&#x3001;&#x5C4F;&#x5E55;&#x65CB;&#x8F6C;&#x3001;&#x6309;&#x94AE;&#x70B9;&#x51FB;&#x7B49;&#x7B49;&#x3002;</li>
+</ul>
+<p>&#x5173;&#x4E8E;&#x624B;&#x52BF;&#x8BC6;&#x522B;</p>
+<ul>
+<li>&#x5F53;&#x8BC6;&#x522B;&#x4E00;&#x4E2A;&#x624B;&#x52BF;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x4F1A;&#x5148; cancel &#x5F53;&#x524D; touchbegin &#x7B49;&#x4E8B;&#x4EF6;&#x56DE;&#x8C03;&#xFF0C;&#x5C06;&#x624B;&#x52BF;&#x8BC6;&#x522B;&#x5668;&#x6807;&#x8BB0;&#x4E3A;&#x5F85;&#x5904;&#x7406;&#xFF0C;apple &#x6CE8;&#x518C;&#x7684; observer &#x76D1;&#x542C; beforWaiting &#x4E8B;&#x4EF6;&#xFF0C;&#x56DE;&#x8C03;&#x51FD;&#x6570;&#x5C31;&#x4F1A;&#x83B7;&#x53D6;&#x5185;&#x90E8;&#x88AB;&#x6807;&#x8BB0;&#x7684;&#x5F85;&#x5904;&#x7406;&#x624B;&#x52BF;&#xFF0C;&#x7136;&#x540E;&#x6267;&#x884C;&#x3002;</li>
+</ul>
+<p>&#x5173;&#x4E8E;&#x754C;&#x9762;&#x66F4;&#x65B0;</p>
+<ul>
+<li>&#x5F53;&#x64CD;&#x4F5C; UI &#x65F6;&#xFF0C;&#x6240;&#x6709;&#x7684;&#x6539;&#x52A8;&#xFF0C;&#x90FD;&#x88AB;&#x6807;&#x8BB0;&#x4E3A;&#x5F85;&#x5904;&#x7406;&#xFF0C;&#x5E76;&#x63D0;&#x4EA4;&#x5230;&#x4E00;&#x4E2A;&#x5168;&#x5C40;&#x5BB9;&#x5668;&#x4E2D;&#x3002;apple&#x6CE8;&#x518C;&#x4E86;&#x4E00;&#x4E2A;observer&#x76D1;&#x542C;beforeWaiting&#x548C;exit&#x4E8B;&#x4EF6;&#xFF0C;&#x56DE;&#x8C03;&#x51FD;&#x6570;&#x5185;&#x53BB;&#x904D;&#x5386;&#x6240;&#x6709;&#x5F85;&#x5904;&#x7406;&#x7684;&#x7ED8;&#x5236;&#x548C;&#x5E03;&#x5C40;&#x4E8B;&#x4EF6;&#xFF0C;&#x53BB;&#x66F4;&#x65B0;UI&#x3002;</li>
+</ul>
+<p>&#x5B9A;&#x65F6;&#x5668;</p>
+<p>&#x4E00;&#x4E2A;NSTimer&#x6CE8;&#x518C;&#x5230;runloop&#x540E;&#xFF0C;Runloop&#x4F1A;&#x4E3A;&#x5176;&#x91CD;&#x590D;&#x7684;&#x65F6;&#x95F4;&#x70B9;&#x6CE8;&#x518C;&#x4E8B;&#x4EF6;&#xFF0C;&#x4E3A;&#x4E86;&#x8282;&#x7701;&#x8D44;&#x6E90;&#xFF0C;&#x4E0D;&#x4F1A;&#x518D;&#x51C6;&#x786E;&#x7684;&#x65F6;&#x95F4;&#x8282;&#x70B9;&#x56DE;&#x8C03;&#x8FD9;&#x4E2A;timer&#x3002;</p>
+<p>performSelector</p>
+<p>&#x5176;&#x5B9E;&#x5F53;&#x6211;&#x4EEC;&#x8C03;&#x7528; <code>performSelecter:afterDelay</code> &#x548C; <code>performSelector:onThread</code> &#x65B9;&#x6CD5;&#x65F6;&#xFF0C;&#x5B9E;&#x9645;&#x90FD;&#x4F1A;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;timer&#x653E;&#x5230;runloop&#x4E2D;&#xFF0C;&#x5982;&#x679C;&#x5F53;&#x524D;&#x7EBF;&#x7A0B;&#x6CA1;&#x6709;runloop&#xFF0C;&#x5219;&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#x4E0D;&#x4F1A;&#x88AB;&#x6267;&#x884C;&#x3002;</p>
+<p>&#x5173;&#x4E8E;GCD</p>
+<p>&#x53EA;&#x6709;&#x8C03;&#x7528; dispatch_async &#x65F6;&#xFF0C;libDispatch &#x624D;&#x4F1A;&#x5411;&#x4E3B;&#x7EBF;&#x7A0B;&#x53D1;&#x9001;runloop&#x6D88;&#x606F;&#xFF0C;runloop&#x4F1A;&#x88AB;&#x5524;&#x9192;&#xFF0C;&#x5E76;&#x5728;&#x56DE;&#x8C03;&#x91CC;&#x6267;&#x884C;&#x8FD9;&#x4E2A;block&#x3002;</p>
+<p>&#x5173;&#x4E8E;&#x7F51;&#x7EDC;&#x8BF7;&#x6C42;</p>
+<p>AFNetworking 2.x &#x7248;&#x672C;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x5185;&#x90E8;&#x8FD8;&#x4F7F;&#x7528;runloop&#x6765;&#x8FDB;&#x884C;&#x7EBF;&#x7A0B;&#x4FDD;&#x6D3B;&#xFF0C;&#x56E0;&#x4E3A;NSURLConnection &#x7684;&#x8BBE;&#x8BA1;&#xFF0C;&#x5F53;&#x53D1;&#x9001;&#x8BF7;&#x6C42;&#x540E;&#xFF0C;&#x5FC5;&#x987B;&#x8BA9;&#x7EBF;&#x7A0B;&#x4FDD;&#x6D3B;&#x6765;&#x63A5;&#x6536; connection delegate &#x56DE;&#x8C03;&#x56DE;&#x6765;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x6240;&#x4EE5;&#x8BBE;&#x8BA1;&#x4E86;&#x4F7F;&#x7528;NSRunloop&#x6765;&#x8FDB;&#x884C;&#x7EBF;&#x7A0B;&#x4FDD;&#x6D3B;&#x3002;</p>
+<h4 id="nsnotificationcenter&#x662F;&#x5728;&#x54EA;&#x4E2A;&#x7EBF;&#x7A0B;&#x53D1;&#x9001;&#x7684;&#x901A;&#x77E5;&#xFF1F;">NSNotificationCenter&#x662F;&#x5728;&#x54EA;&#x4E2A;&#x7EBF;&#x7A0B;&#x53D1;&#x9001;&#x7684;&#x901A;&#x77E5;&#xFF1F;</h4>
+<p><a href="http://southpeak.github.io/2015/03/14/nsnotification-and-multithreading/" target="_blank">http://southpeak.github.io/2015/03/14/nsnotification-and-multithreading/</a></p>
+<ul>
+<li>&#x5B83;&#x662F;&#x4E00;&#x4E2A;&#x7EBF;&#x7A0B;&#x5B89;&#x5168;&#x7C7B;&#xFF0C;&#x53EF;&#x4EE5;&#x5728;&#x591A;&#x7EBF;&#x7A0B;&#x73AF;&#x5883;&#x4E0B;&#x4F7F;&#x7528;&#x540C;&#x4E00;&#x4E2A; NSNotificationCenter &#x5BF9;&#x8C61;&#x800C;&#x4E0D;&#x9700;&#x8981;&#x52A0;&#x9501;&#x3002;</li>
+<li>&#x4F46;&#x662F;&#x5728;&#x591A;&#x7EBF;&#x7A0B;&#x73AF;&#x5883;&#x4E2D;&#xFF0C;NSNotificationCenter &#x7684; post &#x548C;&#x8F6C;&#x53D1; &#x662F;&#x5728;&#x540C;&#x4E00;&#x4E2A;&#x7EBF;&#x7A0B;&#x4E2D;&#x3002;</li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../Runtime/" class="navigation navigation-prev " aria-label="Previous page: Runtime">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../design/" class="navigation navigation-next " aria-label="Next page: 设计模式">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Runloop","level":"1.5","depth":1,"next":{"title":"设计模式","level":"1.6","depth":1,"path":"design/README.md","ref":"design/README.md","articles":[]},"previous":{"title":"Runtime","level":"1.4","depth":1,"path":"Runtime/README.md","ref":"Runtime/README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"runloop/README.md","mtime":"2020-01-04T11:11:05.927Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-01-04T11:16:08.281Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
