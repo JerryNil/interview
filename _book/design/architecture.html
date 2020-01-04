@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>数据结构 · GitBook</title>
+        <title>架构 · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,10 +57,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="../system/" />
+    <link rel="next" href="../network/" />
     
     
-    <link rel="prev" href="../multiThread/" />
+    <link rel="prev" href="./" />
     
 
     </head>
@@ -218,9 +218,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6" data-path="../design/">
+        <li class="chapter " data-level="1.6" data-path="./">
             
-                <a href="../design/">
+                <a href="./">
             
                     
                     设计模式
@@ -232,9 +232,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.6.1" data-path="../design/architecture.html">
+        <li class="chapter active" data-level="1.6.1" data-path="architecture.html">
             
-                <a href="../design/architecture.html">
+                <a href="architecture.html">
             
                     
                     架构
@@ -276,9 +276,9 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.9" data-path="./">
+        <li class="chapter " data-level="1.9" data-path="../datastruct/">
             
-                <a href="./">
+                <a href="../datastruct/">
             
                     
                     数据结构
@@ -358,7 +358,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >数据结构</a>
+        <a href=".." >架构</a>
     </h1>
 </div>
 
@@ -373,23 +373,27 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h2 id="&#x6570;&#x636E;&#x7ED3;&#x6784;">&#x6570;&#x636E;&#x7ED3;&#x6784;</h2>
-<h4 id="&#x94FE;&#x8868;&#x548C;&#x6570;&#x7EC4;&#x7684;&#x533A;&#x522B;&#x662F;&#x4EC0;&#x4E48;&#xFF1F;&#x63D2;&#x5165;&#x548C;&#x67E5;&#x8BE2;&#x7684;&#x65F6;&#x95F4;&#x590D;&#x6742;&#x5EA6;&#x5206;&#x522B;&#x662F;&#x591A;&#x5C11;&#xFF1F;">&#x94FE;&#x8868;&#x548C;&#x6570;&#x7EC4;&#x7684;&#x533A;&#x522B;&#x662F;&#x4EC0;&#x4E48;&#xFF1F;&#x63D2;&#x5165;&#x548C;&#x67E5;&#x8BE2;&#x7684;&#x65F6;&#x95F4;&#x590D;&#x6742;&#x5EA6;&#x5206;&#x522B;&#x662F;&#x591A;&#x5C11;&#xFF1F;</h4>
+                                <h1 id="&#x67B6;&#x6784;">&#x67B6;&#x6784;</h1>
+<h4 id="mvc&#x548C;mvvm&#x7684;&#x533A;&#x522B;&#xFF1F;mvvm&#x548C;mvp&#x7684;&#x533A;&#x522B;&#xFF1F;">MVC&#x548C;MVVM&#x7684;&#x533A;&#x522B;&#xFF1F;MVVM&#x548C;MVP&#x7684;&#x533A;&#x522B;&#xFF1F;</h4>
+<h4 id="&#x9762;&#x5411;&#x5BF9;&#x8C61;&#x7684;&#x51E0;&#x4E2A;&#x8BBE;&#x8BA1;&#x539F;&#x5219;&#x4E86;&#x89E3;&#x4E48;&#xFF1F;&#x6700;&#x597D;&#x53EF;&#x4EE5;&#x7ED3;&#x5408;&#x573A;&#x666F;&#x6765;&#x8BF4;&#x3002;">&#x9762;&#x5411;&#x5BF9;&#x8C61;&#x7684;&#x51E0;&#x4E2A;&#x8BBE;&#x8BA1;&#x539F;&#x5219;&#x4E86;&#x89E3;&#x4E48;&#xFF1F;&#x6700;&#x597D;&#x53EF;&#x4EE5;&#x7ED3;&#x5408;&#x573A;&#x666F;&#x6765;&#x8BF4;&#x3002;</h4>
 <ul>
-<li>&#x6570;&#x7EC4;&#x662F;&#x4E00;&#x5757;&#x8FDE;&#x7EED;&#x7684;&#x5185;&#x5B58;&#x3002;&#x968F;&#x673A;&#x8BBF;&#x95EE;&#x6027;&#x5F3A;&#xFF0C;&#x67E5;&#x627E;&#x901F;&#x5EA6;&#x5FEB;&#x3002;&#x63D2;&#x5165;&#x548C;&#x5220;&#x9664;&#x6548;&#x7387;&#x4F4E;&#xFF0C;&#x53EF;&#x80FD;&#x6D6A;&#x8D39;&#x5185;&#x5B58;&#xFF0C;&#x5185;&#x5B58;&#x7A7A;&#x95F4;&#x8981;&#x6C42;&#x9AD8;&#xFF0C;&#x5FC5;&#x987B;&#x6709;&#x8DB3;&#x591F;&#x7684;&#x8FDE;&#x7EED;&#x5185;&#x5B58;&#x7A7A;&#x95F4;&#x3002;&#x63D2;&#x5165;&#x548C;&#x5220;&#x9664;&#x662F;On&#xFF0C;&#x67E5;&#x8BE2;&#x662F;O1</li>
-<li>&#x94FE;&#x8868;&#x63D2;&#x5165;&#x5220;&#x9664;&#x901F;&#x5EA6;&#x5FEB;&#xFF0C;&#x5185;&#x5B58;&#x5229;&#x7528;&#x7387;&#x9AD8;&#xFF0C;&#x4E0D;&#x6D6A;&#x8D39;&#x5185;&#x5B58;&#xFF0C;&#x5927;&#x5C0F;&#x6CA1;&#x6709;&#x56FA;&#x5B9A;&#xFF0C;&#x5BB9;&#x6613;&#x6269;&#x5C55;&#x3002;&#x63D2;&#x5165;&#x548C;&#x5220;&#x9664;&#x662F;O1&#xFF0C;&#x67E5;&#x8BE2;&#x662F;On</li>
+<li>&#x5355;&#x4E00;&#x539F;&#x5219;</li>
+<li>&#x5F00;&#x95ED;&#x539F;&#x5219;</li>
+<li>&#x91CC;&#x6C0F;&#x66FF;&#x6362;&#x539F;&#x5219;</li>
+<li>&#x63A5;&#x53E3;&#x5206;&#x79BB;&#x539F;&#x5219;</li>
+<li>&#x4F9D;&#x8D56;&#x5012;&#x7F6E;&#x539F;&#x5219;</li>
+<li>&#x8FEA;&#x7C73;&#x6CD5;&#x7279;&#x539F;&#x5219;</li>
 </ul>
-<h4 id="&#x54C8;&#x5E0C;&#x8868;&#x662F;&#x5982;&#x4F55;&#x5B9E;&#x73B0;&#x7684;&#xFF1F;&#x5982;&#x4F55;&#x89E3;&#x51B3;&#x5730;&#x5740;&#x51B2;&#x7A81;&#xFF1F;">&#x54C8;&#x5E0C;&#x8868;&#x662F;&#x5982;&#x4F55;&#x5B9E;&#x73B0;&#x7684;&#xFF1F;&#x5982;&#x4F55;&#x89E3;&#x51B3;&#x5730;&#x5740;&#x51B2;&#x7A81;&#xFF1F;</h4>
-<p>&#x3002;&#x3002;&#x3002;</p>
-<h4 id="&#x6392;&#x5E8F;&#x9898;&#xFF1A;&#x5192;&#x6CE1;&#x6392;&#x5E8F;&#xFF0C;&#x9009;&#x62E9;&#x6392;&#x5E8F;&#xFF0C;&#x63D2;&#x5165;&#x6392;&#x5E8F;&#xFF0C;&#x5FEB;&#x901F;&#x6392;&#x5E8F;&#xFF08;&#x4E8C;&#x8DEF;&#xFF0C;&#x4E09;&#x8DEF;&#xFF09;&#x80FD;&#x5199;&#x51FA;&#x90A3;&#x4E9B;&#xFF1F;">&#x6392;&#x5E8F;&#x9898;&#xFF1A;&#x5192;&#x6CE1;&#x6392;&#x5E8F;&#xFF0C;&#x9009;&#x62E9;&#x6392;&#x5E8F;&#xFF0C;&#x63D2;&#x5165;&#x6392;&#x5E8F;&#xFF0C;&#x5FEB;&#x901F;&#x6392;&#x5E8F;&#xFF08;&#x4E8C;&#x8DEF;&#xFF0C;&#x4E09;&#x8DEF;&#xFF09;&#x80FD;&#x5199;&#x51FA;&#x90A3;&#x4E9B;&#xFF1F;</h4>
-<p><a href="https://www.cnblogs.com/onepixel/p/7674659.html" target="_blank">https://www.cnblogs.com/onepixel/p/7674659.html</a></p>
-<p>&#x3002;&#x3002;&#x3002;</p>
-<h4 id="&#x94FE;&#x8868;&#x9898;&#xFF1A;&#x5982;&#x4F55;&#x68C0;&#x6D4B;&#x94FE;&#x8868;&#x4E2D;&#x662F;&#x5426;&#x6709;&#x73AF;&#xFF1F;&#x5982;&#x4F55;&#x5220;&#x9664;&#x94FE;&#x8868;&#x4E2D;&#x7B49;&#x4E8E;&#x67D0;&#x4E2A;&#x503C;&#x7684;&#x6240;&#x6709;&#x8282;&#x70B9;&#xFF1F;">&#x94FE;&#x8868;&#x9898;&#xFF1A;&#x5982;&#x4F55;&#x68C0;&#x6D4B;&#x94FE;&#x8868;&#x4E2D;&#x662F;&#x5426;&#x6709;&#x73AF;&#xFF1F;&#x5982;&#x4F55;&#x5220;&#x9664;&#x94FE;&#x8868;&#x4E2D;&#x7B49;&#x4E8E;&#x67D0;&#x4E2A;&#x503C;&#x7684;&#x6240;&#x6709;&#x8282;&#x70B9;&#xFF1F;</h4>
-<p>&#x3002;&#x3002;&#x3002;</p>
-<h4 id="&#x6570;&#x7EC4;&#x9898;&#xFF1A;&#x5982;&#x4F55;&#x5728;&#x6709;&#x5E8F;&#x6570;&#x7EC4;&#x4E2D;&#x627E;&#x51FA;&#x548C;&#x7B49;&#x4E8E;&#x7ED9;&#x5B9A;&#x503C;&#x7684;&#x4E24;&#x4E2A;&#x5143;&#x7D20;&#xFF1F;&#x5982;&#x4F55;&#x5408;&#x5E76;&#x4E24;&#x4E2A;&#x6709;&#x5E8F;&#x7684;&#x6570;&#x7EC4;&#x4E4B;&#x540E;&#x4FDD;&#x6301;&#x6709;&#x5E8F;&#xFF1F;">&#x6570;&#x7EC4;&#x9898;&#xFF1A;&#x5982;&#x4F55;&#x5728;&#x6709;&#x5E8F;&#x6570;&#x7EC4;&#x4E2D;&#x627E;&#x51FA;&#x548C;&#x7B49;&#x4E8E;&#x7ED9;&#x5B9A;&#x503C;&#x7684;&#x4E24;&#x4E2A;&#x5143;&#x7D20;&#xFF1F;&#x5982;&#x4F55;&#x5408;&#x5E76;&#x4E24;&#x4E2A;&#x6709;&#x5E8F;&#x7684;&#x6570;&#x7EC4;&#x4E4B;&#x540E;&#x4FDD;&#x6301;&#x6709;&#x5E8F;&#xFF1F;</h4>
-<p>&#x3002;&#x3002;&#x3002;</p>
-<h4 id="&#x4E8C;&#x53C9;&#x6811;&#x9898;&#xFF1A;&#x5982;&#x4F55;&#x53CD;&#x8F6C;&#x4E8C;&#x53C9;&#x6811;&#xFF1F;&#x5982;&#x4F55;&#x9A8C;&#x8BC1;&#x4E24;&#x4E2A;&#x4E8C;&#x53C9;&#x6811;&#x662F;&#x5B8C;&#x5168;&#x76F8;&#x7B49;&#x7684;&#xFF1F;">&#x4E8C;&#x53C9;&#x6811;&#x9898;&#xFF1A;&#x5982;&#x4F55;&#x53CD;&#x8F6C;&#x4E8C;&#x53C9;&#x6811;&#xFF1F;&#x5982;&#x4F55;&#x9A8C;&#x8BC1;&#x4E24;&#x4E2A;&#x4E8C;&#x53C9;&#x6811;&#x662F;&#x5B8C;&#x5168;&#x76F8;&#x7B49;&#x7684;&#xFF1F;</h4>
-<p>&#x3002;&#x3002;&#x3002;</p>
+<h4 id="&#x53EF;&#x4EE5;&#x8BF4;&#x51E0;&#x4E2A;&#x91CD;&#x6784;&#x7684;&#x6280;&#x5DE7;&#x4E48;&#xFF1F;&#x4F60;&#x89C9;&#x5F97;&#x91CD;&#x6784;&#x9002;&#x5408;&#x4EC0;&#x4E48;&#x65F6;&#x5019;&#x6765;&#x505A;">&#x53EF;&#x4EE5;&#x8BF4;&#x51E0;&#x4E2A;&#x91CD;&#x6784;&#x7684;&#x6280;&#x5DE7;&#x4E48;&#xFF1F;&#x4F60;&#x89C9;&#x5F97;&#x91CD;&#x6784;&#x9002;&#x5408;&#x4EC0;&#x4E48;&#x65F6;&#x5019;&#x6765;&#x505A;?</h4>
+<p>&#x91CD;&#x6784;&#x7684;&#x6280;&#x5DE7;&#xFF1A;</p>
+<ul>
+<li>&#x91CD;&#x590D;&#x4EE3;&#x7801;&#x7684;&#x63D0;&#x53D6;</li>
+<li>&#x8FC7;&#x957F;&#x7684;&#x51FD;&#x6570;&#xFF0C;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#x4E2D;&#x505A;&#x4E86;&#x597D;&#x591A;&#x4E8B;&#x60C5;</li>
+<li>&#x8FC7;&#x957F;&#x7684;&#x53C2;&#x6570;&#x5217;&#x8868;&#xFF0C;&#x53EF;&#x4EE5;&#x628A;&#x8FD9;&#x4E9B;&#x53C2;&#x6570;&#x6574;&#x7406;&#x5230;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#x4E2D;&#xFF0C;&#x4F7F;&#x7528;&#x8FD9;&#x4E2A;&#x5BF9;&#x8C61;&#x8FDB;&#x884C;&#x4F20;&#x9012;&#x3002;</li>
+</ul>
+<p>&#x91CD;&#x6784;&#x7684;&#x65F6;&#x673A;&#xFF1A;&#x6211;&#x4EEC;&#x5E94;&#x8BE5;&#x968F;&#x65F6;&#x968F;&#x5730;&#x7684;&#x8FDB;&#x884C;&#xFF0C;&#x6BD4;&#x5982;&#x6DFB;&#x52A0;&#x65B0;&#x529F;&#x80FD;&#x65F6;&#xFF0C;&#x53D1;&#x73B0;&#x65E0;&#x6CD5;&#x6269;&#x5C55;&#x65F6;&#xFF1B;&#x4FEE;&#x6539;bug&#x548C;&#x7EBF;&#x4E0A;crash&#x7684;&#x65F6;&#x5019;&#xFF1B;code review&#x7684;&#x65F6;&#x5019;&#xFF1B;</p>
+<h4 id="&#x4F60;&#x89C9;&#x5F97;&#x6846;&#x67B6;&#x548C;&#x8BBE;&#x8BA1;&#x6A21;&#x5F0F;&#x7684;&#x533A;&#x522B;&#x662F;&#x4EC0;&#x4E48;&#xFF1F;">&#x4F60;&#x89C9;&#x5F97;&#x6846;&#x67B6;&#x548C;&#x8BBE;&#x8BA1;&#x6A21;&#x5F0F;&#x7684;&#x533A;&#x522B;&#x662F;&#x4EC0;&#x4E48;&#xFF1F;</h4>
+<h4 id="&#x770B;&#x8FC7;&#x54EA;&#x4E9B;&#x7B2C;&#x4E09;&#x65B9;&#x6846;&#x67B6;&#x7684;&#x6E90;&#x7801;&#xFF0C;&#x5B83;&#x4EEC;&#x662F;&#x600E;&#x4E48;&#x8BBE;&#x8BA1;&#x7684;&#xFF1F;&#x8BBE;&#x8BA1;&#x597D;&#x7684;&#x5730;&#x65B9;&#x5728;&#x54EA;&#x91CC;&#xFF0C;&#x4E0D;&#x597D;&#x7684;&#x5730;&#x65B9;&#x5728;&#x54EA;&#x91CC;&#xFF0C;&#x5982;&#x4F55;&#x6539;&#x8FDB;&#xFF1F;&#xFF08;&#x8FD9;&#x9053;&#x9898;&#x7684;&#x540E;&#x4E09;&#x4E2A;&#x95EE;&#x9898;&#x7684;&#x96BE;&#x5EA6;&#x5DF2;&#x7ECF;&#x5F88;&#x9AD8;&#x4E86;&#xFF0C;&#x5982;&#x679C;&#x4E0D;&#x662F;&#x592A;n&#x7684;&#x516C;&#x53F8;&#x4E0D;&#x5EFA;&#x8BAE;&#x6DF1;&#x7A76;&#xFF09;">&#x770B;&#x8FC7;&#x54EA;&#x4E9B;&#x7B2C;&#x4E09;&#x65B9;&#x6846;&#x67B6;&#x7684;&#x6E90;&#x7801;&#xFF0C;&#x5B83;&#x4EEC;&#x662F;&#x600E;&#x4E48;&#x8BBE;&#x8BA1;&#x7684;&#xFF1F;&#x8BBE;&#x8BA1;&#x597D;&#x7684;&#x5730;&#x65B9;&#x5728;&#x54EA;&#x91CC;&#xFF0C;&#x4E0D;&#x597D;&#x7684;&#x5730;&#x65B9;&#x5728;&#x54EA;&#x91CC;&#xFF0C;&#x5982;&#x4F55;&#x6539;&#x8FDB;&#xFF1F;&#xFF08;&#x8FD9;&#x9053;&#x9898;&#x7684;&#x540E;&#x4E09;&#x4E2A;&#x95EE;&#x9898;&#x7684;&#x96BE;&#x5EA6;&#x5DF2;&#x7ECF;&#x5F88;&#x9AD8;&#x4E86;&#xFF0C;&#x5982;&#x679C;&#x4E0D;&#x662F;&#x592A;N&#x7684;&#x516C;&#x53F8;&#x4E0D;&#x5EFA;&#x8BAE;&#x6DF1;&#x7A76;&#xFF09;</h4>
 
                                 
                                 </section>
@@ -417,12 +421,12 @@
 
             
                 
-                <a href="../multiThread/" class="navigation navigation-prev " aria-label="Previous page: 多线程">
+                <a href="./" class="navigation navigation-prev " aria-label="Previous page: 设计模式">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="../system/" class="navigation navigation-next " aria-label="Next page: 系统原理">
+                <a href="../network/" class="navigation navigation-next " aria-label="Next page: 网络题">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -433,7 +437,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"数据结构","level":"1.9","depth":1,"next":{"title":"系统原理","level":"1.10","depth":1,"path":"system/README.md","ref":"system/README.md","articles":[]},"previous":{"title":"多线程","level":"1.8","depth":1,"path":"multiThread/README.md","ref":"multiThread/README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"datastruct/README.md","mtime":"2020-01-04T13:09:50.871Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-01-04T13:39:56.294Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"架构","level":"1.6.1","depth":2,"next":{"title":"网络题","level":"1.7","depth":1,"path":"network/README.md","ref":"network/README.md","articles":[]},"previous":{"title":"设计模式","level":"1.6","depth":1,"path":"design/README.md","ref":"design/README.md","articles":[{"title":"架构","level":"1.6.1","depth":2,"path":"design/architecture.md","ref":"design/architecture.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"design/architecture.md","mtime":"2020-01-04T13:16:18.475Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-01-04T13:39:56.294Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

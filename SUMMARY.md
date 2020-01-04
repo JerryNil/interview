@@ -10,6 +10,7 @@
     * [分类](Runtime/category.md)
 * [Runloop](runloop/README.md)
 * [设计模式](design/README.md)
+    * [架构](design/architecture.md)
 * [网络题](network/README.md)
 * [多线程](multiThread/README.md)
 * [数据结构](datastruct/README.md)

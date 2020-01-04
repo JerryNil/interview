@@ -254,40 +254,6 @@ Class objc_getClass(const char *aClassName)
 
 #### load和initialize方法分别在什么时候调用的？
 
-从点击 App 图标开始到首页渲染显示出来的整个过程。总共分为三个阶段：
-
-1、main 函数执行前。
-2、main 函数执行后。
-3、首屏渲染后。
-
-main 函数执行前：
-
-+ 加载可执行文件。
-+ 加载动态链接库，进行rebase指针调整、bind符号绑定。
-+ OC 运行时的初始化，包括OC类注册、category注册、selector唯一性检查。
-+ 初始化，包括了执行 +load() 方法、attribute((constructor)) 修饰的函数的调用、创建 C++ 静态全局变量。
-+ 当类和类别加入到runtime的时候，load方法就会被调用。
-+ 调用所有framework中的初始化方法。
-+ 调用所有load方法。
-+ 调用c++静态初始化以及C++中的构造函数
-+ 调用所有链接到目标文件的framework中的初始化方法。
-
-针对 main 函数执行前，启动优化的几个点：
-
-+ 减少动态库加载。
-
-+ 减少加载启动后不会去使用的类或方法。
-
-+ load 方法的内容可以放到首屏渲染之后在执行，可以使用initialize 方法替换掉。
-
-+ main 函数执行后
-
-  首页业务代码要在这个阶段，也是首屏渲染前执行的
-
-+ 首屏初始化所需配置文件的读写操作。
-+ 首屏列表大数据的读取。
-+ 首屏渲染的大量计算。
-
 load 加载调用顺序
 
 父类load -> 子类load -> 分类load
@@ -306,3 +272,6 @@ initialize
 + 子没有实现 initialize，父的 initialize 会被调用。总共会被调用两次。
 + 父类没有实现，只会调用子类的 initialize 方法。
 + 任何父类或者子类的 category 都会覆盖父类或子类的 initialize 实现。
+
+
+
