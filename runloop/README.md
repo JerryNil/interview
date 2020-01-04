@@ -44,7 +44,7 @@ Observer 的状态：
 #### RunLoop的作用是什么？它的内部工作机制了解么？（最好结合线程和内存管理来说）（runloop原理）
 
 内部的本质其实就是一个do-while循环。核心是基于mach port的。
- 
+
 + 1、首先根据modeName找到对应的mode，如果mode中没有source、timer、observer，会直接返回。
 + 2、通知observer，runloop即将进入loop、
 + 3、通知observer，runloop即将触发timer回调。
@@ -62,7 +62,7 @@ Observer 的状态：
 
 runloop 相关的应用：
 
-autorelease 释放相关
+1、autorelease 释放相关
 
 + APP启动后，apple会在主线程注册两个observer，第一个observer监听的事件是entry，其回调会调用`_objc_autoreleasePoolPush()`创建自动释放池，优先级最高，保证在所有回调之前。
 + 第二个observer监听两个事件，beforeWaiting时调用_objc_autoreleasePoolPop() 和 _objc_autoreleasePoolPush() 释放旧的池并创建新池。exit 时调用 _objc_autoreleasePoolPop() 来释放自动释放池，这个优先级最低，保证所有回调之后。
@@ -79,19 +79,19 @@ autorelease 释放相关
 
 + 当操作 UI 时，所有的改动，都被标记为待处理，并提交到一个全局容器中。apple注册了一个observer监听beforeWaiting和exit事件，回调函数内去遍历所有待处理的绘制和布局事件，去更新UI。
 
-定时器
+2、定时器
 
 一个NSTimer注册到runloop后，Runloop会为其重复的时间点注册事件，为了节省资源，不会再准确的时间节点回调这个timer。
 
-performSelector
+3、performSelector
 
 其实当我们调用 `performSelecter:afterDelay` 和 `performSelector:onThread` 方法时，实际都会创建一个timer放到runloop中，如果当前线程没有runloop，则这个方法不会被执行。
 
-关于GCD
+4、关于GCD
 
 只有调用 dispatch_async 时，libDispatch 才会向主线程发送runloop消息，runloop会被唤醒，并在回调里执行这个block。
 
-关于网络请求
+5、关于网络请求
 
 AFNetworking 2.x 版本的时候，内部还使用runloop来进行线程保活，因为NSURLConnection 的设计，当发送请求后，必须让线程保活来接收 connection delegate 回调回来的数据，所以设计了使用NSRunloop来进行线程保活。
 
